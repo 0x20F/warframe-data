@@ -14,6 +14,7 @@ module.exports = (env, argv) => {
             filename: "bundle.js"
         },
         resolve: {
+            extensions: [".jsx", ".js", ".scss", ".html", "*"],
             alias: {
                 "@Components": path.resolve(__dirname, "src/app/components"),
                 "@Styles": path.resolve(__dirname, "src/styles"),
