@@ -9,12 +9,27 @@ $navEdge: 60px;
 
 nav {
     height: 50px;
-    width: 100%;
+    width: auto;
 
-    background-color: red;
+    padding: 10px 0 20px 20px;
+    transition: all $transitionSpeed;
+    @include flex(flex-start, center);
 
-    @include flex(center, center);
+    svg {
+        cursor: pointer;
+        color: $dark;
+    }
+
+    &.toggled {
+        // 20px is the padding between the button and the left wall
+        padding-left: $sidebarWidth + 20px;
+
+        .sidebar {
+            margin-left: 0;
+        }
+    }
 }
+
 
 .sidebar {
     position: absolute;
@@ -26,6 +41,7 @@ nav {
 
     margin-left: -$sidebarWidth;
     transition: all $transitionSpeed;
-
+    
+    background-color: $dark;
     @include flex(center, center, column);
 }
