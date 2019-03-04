@@ -6,6 +6,8 @@ const mini_css_plugin       = require("mini-css-extract-plugin");
 
 
 module.exports = (env, argv) => {
+    // TODO: Checks for development or production
+    console.log(argv.mode);
 
     return {
         entry: path.resolve(__dirname, "src") + "/index.js",
