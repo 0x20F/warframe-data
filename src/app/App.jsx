@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 
+import Navbar from "@Components/Navbar.jsx";
+
 
 class App extends Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
+                <Navbar/>
                 Hello World
-            </div>
+            </React.Fragment>
         );
     }
 }
