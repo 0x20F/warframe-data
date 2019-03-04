@@ -1,4 +1,5 @@
-@import "@Styles/utils/_mixins"; // For now until I can fix partials
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
 
 nav {
     background-color: red;
