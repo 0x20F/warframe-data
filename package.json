@@ -1,0 +1,19 @@
+{
+  "name": "warframe-data",
+  "version": "1.0.0",
+  "description": "Beautiful display of data from the warframestat api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirTheViking/warframe-data.git"
+  },
+  "author": "SirTheViking",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SirTheViking/warframe-data/issues"
+  },
+  "homepage": "https://github.com/SirTheViking/warframe-data#readme"
+}
