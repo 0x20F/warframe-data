@@ -12,37 +12,35 @@ class Navbar extends Component {
     constructor() {
         super();
         this.state = {
-            toggled: false
+            
         };
-
-        this.toggleSidebar = this.toggleSidebar.bind(this);
-    }
-
-
-    toggleSidebar() {
-        this.setState(state => {
-            return {
-                toggled: !state.toggled
-            };
-        });
     }
 
 
     render() {
-        const isToggled     = this.state.toggled ? "toggled" : "";
-        const toggledIcon   = this.state.toggled ? "times" : "bars";
+        const iconSize = "lg";
 
         return (
-            <nav className={isToggled}>
-
-                <FontAwesomeIcon 
-                    icon={toggledIcon} 
-                    size="lg"
-                    onClick={this.toggleSidebar}/>
+            <nav>
                 
                 <div className="sidebar">
-                    <Link to="/">Home</Link>
-                    <Link to="/news">News</Link>
+                    <Link to="/">
+                        <FontAwesomeIcon 
+                            size={iconSize}
+                            icon="home"/>
+                    </Link>
+                    
+                    <Link to="/news">
+                        <FontAwesomeIcon 
+                            size={iconSize}
+                            icon="newspaper"/>
+                    </Link>
+
+                    <Link to="/alerts">
+                        <FontAwesomeIcon 
+                            size={iconSize}
+                            icon="exclamation-triangle"/>
+                    </Link>
                 </div>
 
             </nav>
