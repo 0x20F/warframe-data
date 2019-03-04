@@ -2,6 +2,9 @@
 
     display: flex;
 
+    // so that the first argument is always
+    // horizontal and the second one is always
+    // vertical
     @if $direction == column {
         align-items: $justify;
         justify-content: $align;
