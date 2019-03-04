@@ -19,9 +19,13 @@ module.exports = (env, argv) => {
             extensions: [".jsx", ".js", ".scss", ".html", "*"],
             alias: {
                 "@Components": path.resolve(__dirname, "src/app/components"),
+                "@Pages": path.resolve(__dirname, "src/app/pages"),
                 "@Styles": path.resolve(__dirname, "src/styles"),
-                App$: path.resolve(__dirname, "src/app/App.jsx") // Bound to change eventually
+                AppRouter$: path.resolve(__dirname, "src/app/AppRouter.jsx") // Bound to change eventually
             }
+        },
+        devServer: {
+            historyApiFallback: true
         },
 
         module: {
