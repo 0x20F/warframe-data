@@ -13,12 +13,14 @@ class AppRouter extends Component {
     render() {
         return (
             <Router>
-                <div>
+                <React.Fragment>
+
                     <Navbar/>
 
                     <Route path="/" exact component={Home} />
                     <Route path="/news" component={News} />
-                </div>
+                    
+                </React.Fragment>
             </Router>
         );
     }
