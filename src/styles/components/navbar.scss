@@ -14,7 +14,7 @@
     transition: all $transitionSpeed;
     
     background-color: $darker;
-    @include flex(center, flex-start, column);
+    @include flex(center, center, column);
 
     a {
         color: $lighterFont;
@@ -25,6 +25,17 @@
 
         &.active {
             color: $accentColor;
+        }
+    }
+    
+    @media screen and (max-width: 720px) {
+        width: 100%;
+        height: $sidebarWidth; // Bad name...
+
+        @include flex(center, center, row);
+
+        a {
+            padding: 0 20px;
         }
     }
 }
