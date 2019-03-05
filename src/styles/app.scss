@@ -12,6 +12,8 @@ body {
     margin: 0;
     padding: 0;
 
+    background-color: $dark;
+
     #root {
         width: auto;
         height: auto;
@@ -21,7 +23,11 @@ body {
         margin-left: $sidebarWidth + $sidebarMargin;
         padding: 0;
 
-        
+        // For everything that doesn't ovveride
+        font-family: Poppins;
+        color: $lightFont;
+
+
         @media screen and (max-width: 720px) {
             width: 100%;
 
