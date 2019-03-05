@@ -3,16 +3,6 @@
 @import "@Styles/utils/variables";
 
 
-nav {
-    height: 50px;
-    width: auto;
-
-    padding: 10px 0 20px 20px;
-    transition: all $transitionSpeed;
-    @include flex(flex-start, center);
-}
-
-
 .sidebar {
     position: absolute;
     top: 0;

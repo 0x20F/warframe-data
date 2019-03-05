@@ -3,41 +3,25 @@ import React, { Component }     from "react";
 import NavItem from "@Components/Nav/NavItem";
 import "@Styles/components/navbar";
 
+const Navbar = () => {
+    return  (
+        <div className="sidebar">
+            <NavItem 
+                destination="/"
+                iconSize="lg"
+                icon="home"/>
 
-class Navbar extends Component {
+            <NavItem 
+                destination="/news"
+                iconSize="lg"
+                icon="newspaper"/>
 
-    constructor() {
-        super();
-        this.state = {
-            
-        };
-    }
-
-
-    render() {
-        return (
-            <nav>
-                
-                <div className="sidebar">
-                    <NavItem 
-                        destination="/"
-                        iconSize="lg"
-                        icon="home"/>
-
-                    <NavItem 
-                        destination="/news"
-                        iconSize="lg"
-                        icon="newspaper"/>
-
-                    <NavItem 
-                        destination="/alerts"
-                        iconSize="lg"
-                        icon="exclamation-triangle"/>
-                </div>
-
-            </nav>
-        );
-    }
+            <NavItem 
+                destination="/alerts"
+                iconSize="lg"
+                icon="exclamation-triangle"/>
+        </div>
+    );
 }
 
 export default Navbar;
