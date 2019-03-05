@@ -17,12 +17,16 @@
     @include flex(center, center, column);
 
     a {
+        width: 100%;
+
         color: $lighterFont;
         text-decoration: none;
 
         padding: 20px 0;
         transition: all $transitionSpeed;
 
+        @include flex(center, center);
+        
         &.active {
             color: $accentColor;
         }
@@ -32,10 +36,6 @@
         width: 100%;
         height: $sidebarWidth; // Bad name...
 
-        @include flex(center, center, row);
-
-        a {
-            padding: 0 20px;
-        }
+        @include flex(space-evenly, center, row);
     }
 }
