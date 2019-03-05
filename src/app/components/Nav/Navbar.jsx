@@ -1,6 +1,6 @@
-import React, { Component }     from "react";
+import React    from "react";
 
-import NavItem from "@Components/Nav/NavItem";
+import NavItem  from "@Components/Nav/NavItem";
 import "@Styles/components/navbar";
 
 const Navbar = () => {
