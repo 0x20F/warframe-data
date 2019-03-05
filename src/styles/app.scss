@@ -14,12 +14,12 @@ body {
 
     #root {
         // Calculate a 100% width excluding the sidebar
-        width: calc(100% - #{$sidebarWidth});
-        height: 100%;
+        width: calc(100% - #{$sidebarWidth + $sidebarMargin});
+        height: auto;
         margin: 0;
         // Move the root container to the left by
         // the sidebar width so the body doesn't overflow
-        margin-left: $sidebarWidth;
+        margin-left: $sidebarWidth + $sidebarMargin;
         padding: 0;
     }
 }

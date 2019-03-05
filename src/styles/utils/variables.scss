@@ -1,10 +1,13 @@
-$dark       : #282c34;
-$darker     : #20232a;
+$dark           : #282c34;
+$darker         : #20232a;
 
-$darkFont   : #282c34;
-$lighterFont: #33373f;
+$darkFont       : #282c34;
+$lighterFont    : #33373f;
+
+$accentColor    : #2ba7e0;
 
 $transitionSpeed: .2s;
 
 // Used in navbar.scss & app.scss
-$sidebarWidth: 70px;
+$sidebarWidth   : 70px;
+$sidebarMargin  : 40px;
