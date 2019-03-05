@@ -13,8 +13,7 @@ body {
     padding: 0;
 
     #root {
-        // Calculate a 100% width excluding the sidebar
-        width: calc(100% - #{$sidebarWidth + $sidebarMargin});
+        width: auto;
         height: auto;
         margin: 0;
         // Move the root container to the left by
