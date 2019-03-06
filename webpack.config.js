@@ -22,8 +22,9 @@ module.exports = (env, argv) => {
             alias: {
                 "@Components": path.resolve(__dirname, "src/app/components"),
                 "@Pages": path.resolve(__dirname, "src/app/pages"),
-                "@Styles": path.resolve(__dirname, "src/styles"),
                 AppRouter$: path.resolve(__dirname, "src/app/AppRouter.jsx"), // Bound to change eventually
+
+                "@Styles": path.resolve(__dirname, "src/styles"),
 
                 // Temporary resolve
                 "@Temp": path.resolve(__dirname, "src/app/temp")
@@ -61,6 +62,7 @@ module.exports = (env, argv) => {
                 }
             ]
         },
+        
 
         plugins: [
             new html_webpack_plugin({
