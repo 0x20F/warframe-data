@@ -7,11 +7,12 @@ $lightFont          : #b0b4bd;
 
 $accentColor        : #4dabf7;
 $borderColor        : $accentColor;
+$glowColor          : rgba(34,139,230,0.5);
 
 $transitionSpeed    : .2s;
 
 $simpleBoxShadow    : 0 0 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-$glowBoxShadow      : inset 0 1px 1px rgba(0,0,0,0.0125),0 0 8px rgba(34,139,230,0.5);
+$glowBoxShadow      : inset 0 1px 1px rgba(0,0,0,0.0125),0 0 8px $glowColor;
 
 
 // Used in navbar.scss & app.scss
