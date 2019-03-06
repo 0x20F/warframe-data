@@ -1,21 +1,24 @@
-$dark           : #282c34;
-$darker         : #20232a;
+$dark               : #282c34;
+$darker             : #20232a;
 
-$darkFont       : #282c34;
-$lighterFont    : #33373f;
-$lightFont      : #b0b4bd;
+$darkFont           : #282c34;
+$lighterFont        : #33373f;
+$lightFont          : #b0b4bd;
 
-$accentColor    : #2ba7e0;
+$accentColor        : #2ba7e0;
 
-$transitionSpeed: .2s;
+$transitionSpeed    : .2s;
+
+$simpleBoxShadow    : 0 0 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
 
 // Used in navbar.scss & app.scss
-$sidebarWidth   : 70px;
-$sidebarMargin  : 40px;
+$sidebarWidth       : 70px;
+$sidebarMargin      : 40px;
 
 
 // Media queries
-$widthSmallest  : 720px;
-$widthSmall     : 860px;
-$widthMedium    : 1140px;
-$widthLarge     : 1400px;
+$widthSmallest      : 720px;
+$widthSmall         : 860px;
+$widthMedium        : 1140px;
+$widthLarge         : 1400px;

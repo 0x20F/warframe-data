@@ -6,7 +6,7 @@
 .news-container {
 
     h1 {
-        font-family: "nidus_sansregular";
+        font-family: Poppins; // Temporary
         font-size: 46px;
     }
 
@@ -20,12 +20,12 @@
 
         div {
             @include flex(center, center);
-            background-color: #7289da;
 
             grid-column: span 2;
             grid-row: span 2;
 
             border-radius: 2px;
+            box-shadow: $simpleBoxShadow;
         }
 
         .most-recent {
@@ -36,7 +36,7 @@
 
 
 
-    
+
     @media screen and (max-width: $widthSmallest) {
         width: 90%;
     }
