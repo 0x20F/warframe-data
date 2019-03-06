@@ -23,7 +23,10 @@ module.exports = (env, argv) => {
                 "@Components": path.resolve(__dirname, "src/app/components"),
                 "@Pages": path.resolve(__dirname, "src/app/pages"),
                 "@Styles": path.resolve(__dirname, "src/styles"),
-                AppRouter$: path.resolve(__dirname, "src/app/AppRouter.jsx") // Bound to change eventually
+                AppRouter$: path.resolve(__dirname, "src/app/AppRouter.jsx"), // Bound to change eventually
+
+                // Temporary resolve
+                "@Temp": path.resolve(__dirname, "src/app/temp")
             }
         },
 
