@@ -1,0 +1,55 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+
+.news-container {
+
+    h1 {
+        font-family: "nidus_sansregular";
+        font-size: 46px;
+    }
+
+    .wrapper {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 70px);
+        grid-gap: 10px;
+
+        div {
+            @include flex(center, center);
+            background-color: #7289da;
+
+            grid-column: span 2;
+            grid-row: span 2;
+
+            border-radius: 2px;
+        }
+
+        .most-recent {
+            grid-column: span 4;
+            grid-row: span 3;
+        }
+    }
+
+
+
+    
+    @media screen and (max-width: $widthSmallest) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: $widthSmall) {
+        width: 720px;
+    }
+
+    @media screen and (min-width: $widthMedium) {
+        width: 960px;
+    }
+
+    @media screen and (min-width: $widthLarge) {
+        width: 1140px;
+    }
+}
