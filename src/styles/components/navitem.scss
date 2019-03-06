@@ -12,7 +12,12 @@
     transition: all $transitionSpeed;
 
     @include flex(center, center, column);
-    
+
+    &:hover {
+        color: $accentColor;
+        filter: $glowDropShadow;
+    }
+
     &.active {
         color: $accentColor;
         filter: $glowDropShadow;
