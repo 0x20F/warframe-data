@@ -4,10 +4,13 @@
 
 
 .news-container {
+    width: 90%;
 
-    h1 {
-        font-family: Poppins; // Temporary
+    header {
+        font-family: Montserrat; // Temporary
         font-size: 46px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
     }
 
     .wrapper {
@@ -16,21 +19,13 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 70px);
-        grid-gap: 10px;
+        grid-gap: 20px;
 
-        div {
-            @include flex(center, center);
+        transition: all $transitionSpeed;
 
-            grid-column: span 2;
-            grid-row: span 2;
-
-            border-radius: 2px;
-            box-shadow: $simpleBoxShadow;
-        }
-
-        .most-recent {
-            grid-column: span 4;
-            grid-row: span 3;
+        @media screen and (max-width: $widthSmallest) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 70px);
         }
     }
 
