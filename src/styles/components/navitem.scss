@@ -1,0 +1,20 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+.nav-item {
+    width: 100%;
+
+    color: $lighterFont;
+    text-decoration: none;
+
+    padding: 20px 0;
+    transition: all $transitionSpeed;
+
+    @include flex(center, center);
+    
+    &.active {
+        color: $accentColor;
+        filter: $glowDropShadow;
+    }
+}

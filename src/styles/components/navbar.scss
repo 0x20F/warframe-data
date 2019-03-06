@@ -16,22 +16,6 @@
     background-color: $darker;
     @include flex(center, center, column);
 
-    a {
-        width: 100%;
-
-        color: $lighterFont;
-        text-decoration: none;
-
-        padding: 20px 0;
-        transition: all $transitionSpeed;
-
-        @include flex(center, center);
-        
-        &.active {
-            color: $accentColor;
-            filter: $glowDropShadow;
-        }
-    }
     
     @media screen and (max-width: $widthSmallest) {
         width: 100%;
