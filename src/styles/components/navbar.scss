@@ -32,7 +32,7 @@
         }
     }
     
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: $widthSmallest) {
         width: 100%;
         height: $sidebarWidth; // Bad name...
 
