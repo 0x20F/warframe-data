@@ -50,8 +50,13 @@ class AppRouter extends Component {
 
                     <Navbar/>
 
-                    <Route path="/" exact component={Home} />
-                    <Route path="/news" component={News} />
+                    <Route 
+                        path="/" 
+                        exact render={ () => <Home /> } />
+
+                    <Route 
+                        path="/news" 
+                        render={ () => <News news={this.state.data.news}/> } />
                     
                 </React.Fragment>
             </Router>

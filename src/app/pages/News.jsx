@@ -3,10 +3,12 @@ import React, { Component } from "react";
 
 class News extends Component {
 
+
     render() {
+        
         return (
             <div>
-                Here you see important news
+                Welcome to the news page
             </div>
         );
     }
