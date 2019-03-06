@@ -9,17 +9,20 @@ const Navbar = () => {
             <NavItem 
                 destination="/"
                 iconSize="lg"
-                icon="home"/>
+                icon="home"
+                text="home"/>
 
             <NavItem 
                 destination="/news"
                 iconSize="lg"
-                icon="newspaper"/>
+                icon="newspaper"
+                text="news"/>
 
             <NavItem 
                 destination="/alerts"
                 iconSize="lg"
-                icon="exclamation-triangle"/>
+                icon="exclamation-triangle"
+                text="alerts"/>
         </div>
     );
 }

@@ -16,6 +16,8 @@ const NavItem = (props) => {
             <FontAwesomeIcon 
                 size={props.iconSize}
                 icon={props.icon}/>
+
+            <span className="item-text">{props.text}</span>
         </NavLink>
     );
 }

@@ -3,9 +3,9 @@
 @import "@Styles/utils/variables";
 
 
-.sidebar {
-    width: $sidebarWidth;
-    height: 100%;
+.sidebar { // bad name
+    width: 100%;
+    height: $sidebarWidth;
 
     position: fixed;
     top: 0;
@@ -13,13 +13,15 @@
 
     transition: all $transitionSpeed;
     
-    background-color: $darker;
-    @include flex(center, center, column);
+    background-color: $dark;
+    @include flex(center, center, row);
 
     
     @media screen and (max-width: $widthSmallest) {
         width: 100%;
         height: $sidebarWidth; // Bad name...
+
+        background-color: $darker;
 
         @include flex(space-evenly, center, row);
     }
