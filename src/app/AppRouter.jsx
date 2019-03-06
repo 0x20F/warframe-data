@@ -7,8 +7,41 @@ import News     from "@Pages/News";
 
 import Navbar   from "@Components/Nav/Navbar";
 
+// For development
+import gameData from "@Temp/gameData";
+
 
 class AppRouter extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            data: gameData
+        }
+        
+        this.apiUrl     = "https://api.warframestat.us/pc"; // pc should be replaceable
+        this.mounted    = true; // For dev server
+    }
+
+
+    componentDidMount() {
+        // fetch(this.apiUrl)
+        //     .then(response => response.json())
+        //     .then(response => {
+        //         if(!this.mounted) return;
+                
+        //         this.setState({
+        //             gameData: response
+        //         })
+        //     });
+    }
+
+
+    componentWillUnmount() {
+        // this.mounted = false;
+    }
+
 
     render() {
         return (
