@@ -8,12 +8,9 @@ html {
 
 body {
     @extend html;
-
     margin: 0;
     padding: 0;
-
     background-color: $dark;
-
     overflow-x: hidden;
 
     #root {
@@ -24,19 +21,15 @@ body {
         // the sidebar width so the body doesn't overflow
         margin-left: $sidebarWidth + $sidebarMargin;
         padding: 0;
-
         // For everything that doesn't ovveride
         font-family: Poppins;
         color: $lightFont;
-        
         @include flex(center, center, column);
 
 
         @media screen and (max-width: $widthSmallest) {
             width: 100%;
-
             @include flex(center, flex-start, column);
-
             margin-left: 0;
             margin-top: $sidebarWidth + $sidebarMargin;
         }

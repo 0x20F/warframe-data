@@ -10,7 +10,7 @@ class News extends Component {
         const featuredSize  = 3; // How many items will go in the grid
         const newsData      = this.props.news;
         const elements      = newsData.reverse().slice(0, featuredSize).map((item, index) => {
-            
+            // Reversed array because the newest items are last
         });
         
         return (
