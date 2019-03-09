@@ -15,3 +15,27 @@
 
     flex-direction: $direction;
 }
+
+
+
+$phone: 720px;
+$tablet: 860px;
+$desktop: 1200px;
+
+@mixin phone($limit: min-width) {
+    @media screen and ($limit: #{$phone}) {
+        @content;
+    }
+}
+
+@mixin tablet($limit: min-width) {
+    @media screen and ($limit: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop($limit: min-width) {
+    @media screen and ($limit: #{$desktop}) {
+        @content;
+    }
+}
