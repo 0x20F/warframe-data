@@ -4,47 +4,29 @@
 
 
 .news-container {
-    width: 90%;
-
-    header {
-        font-family: Montserrat; // Temporary
-        font-size: 46px;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-    }
 
     .wrapper {
-        width: 100%;
+        width: auto;
+        height: autO;
 
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 70px);
-        grid-gap: 20px;
+        @include flex(center, center);
 
         transition: all $transitionSpeed;
+        background-color: red;
 
-        @media screen and (max-width: $widthSmallest) {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(8, 70px);
+        div { // Bad name?
+            width: 700px;
+            height: 300px;
+            margin: 20px;
+            border-radius: 4px;
+            box-shadow: $simpleBoxShadow;
+            @include flex(center, center);
+            
+            @include phone(max-width) { width: 700px; } // for now
+            @include phone { width: 720px; }    
+            @include tablet { width: 960px; }        
+            @include desktop { width: 1140px; }
         }
     }
 
-
-
-
-    @media screen and (max-width: $widthSmallest) {
-        width: 90%;
-    }
-
-    @media screen and (min-width: $widthSmall) {
-        width: 720px;
-    }
-
-    @media screen and (min-width: $widthMedium) {
-        width: 960px;
-    }
-
-    @media screen and (min-width: $widthLarge) {
-        width: 1140px;
-    }
 }
