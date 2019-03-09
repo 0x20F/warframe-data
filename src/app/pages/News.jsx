@@ -11,6 +11,7 @@ class News extends Component {
         const newsData      = this.props.news;
         const elements      = newsData.reverse().slice(0, featuredSize).map((item, index) => {
             // Reversed array because the newest items are last
+            return <div key={item.id}>{item.message}</div>
         });
         
         return (
