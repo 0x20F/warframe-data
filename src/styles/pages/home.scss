@@ -20,7 +20,7 @@
         width: 100%;
 
         @include flex(center, center);
-        background-color: #7289da;
+        background-image: linear-gradient(to bottom right, #161b22, #0f1318);
     }
 
     .news {
