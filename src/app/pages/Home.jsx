@@ -6,6 +6,7 @@ import "@Styles/pages/home";
 
 class Home extends Component {
     render() {
+        // TODO: Split into separate components!
         return (
             <div className="grid">
                 <div className="news">
@@ -17,27 +18,63 @@ class Home extends Component {
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
 
                 <div>
-                    placeholder
+                    <div className="top">
+                        <header>Placeholder</header>
+                        <div className="subtitle">This is some extra info</div>
+                    </div>
+                    <div className="bottom">
+                        placeholder
+                    </div>
                 </div>
             </div>
         );

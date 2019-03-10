@@ -16,11 +16,37 @@
         "n n a"
         ". . .";
 
-    div {
+    & > div {
+        position: relative;
         width: 100%;
 
-        @include flex(center, center);
+        @include flex(center, center, column);
         background-image: linear-gradient(to bottom right, #161b22, #0f1318);
+        
+        font-family: "Exo 2";
+        text-transform: uppercase;
+
+        .top {
+            font-size: 19px;
+            width: 100%;
+            height: 50%;
+            @include flex(flex-start, center, column);
+            padding-left: 40px;
+
+            .subtitle {
+                font-size: 14px;
+                opacity: 0.5;
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            height: 50%;
+            @include flex(flex-end, center, column);
+            padding-right: 40px;
+            
+        }
+
     }
 
     .news {
