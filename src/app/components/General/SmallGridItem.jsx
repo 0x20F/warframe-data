@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const MiniGridItem = (props) => {
+const SmallGridItem = (props) => {
     return (
         <div>
             <div className="top">
@@ -15,4 +15,4 @@ const MiniGridItem = (props) => {
     );
 }
 
-export default MiniGridItem;
+export default SmallGridItem;
