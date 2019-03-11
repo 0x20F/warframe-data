@@ -8,7 +8,6 @@ import "@Styles/pages/home";
 
 class Home extends Component {
     render() {
-        // TODO: Split into separate components!
         return (
             <div className="grid">
                 <div className="news">
