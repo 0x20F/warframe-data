@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import SmallGridItem from "@Components/General/SmallGridItem";
+
 import "@Styles/pages/home";
 
 
@@ -17,15 +19,13 @@ class Home extends Component {
                     Here we see very important alerts
                 </div>
 
-                <div>
-                    <div className="top">
-                        <header>Placeholder</header>
-                        <div className="subtitle">This is some extra info</div>
-                    </div>
-                    <div className="bottom">
-                        placeholder
-                    </div>
-                </div>
+
+                <SmallGridItem
+                    title="placeholder"
+                    subtitle="placeholder subtitle"
+                    />
+
+
             </div>
         );
     }
