@@ -9,23 +9,26 @@ import "@Styles/pages/home";
 class Home extends Component {
     render() {
         return (
-            <div className="grid">
-                <div className="news">
-                    This is the news component
+            <React.Fragment>
+                <div className="background"></div>
+                <div className="grid">
+                    <div className="news">
+                        This is the news component
+                    </div>
+
+                    <div className="alerts">
+                        Here we see very important alerts
+                    </div>
+
+
+                    <SmallGridItem
+                        title="placeholder"
+                        subtitle="placeholder subtitle"
+                        />
+
+
                 </div>
-
-                <div className="alerts">
-                    Here we see very important alerts
-                </div>
-
-
-                <SmallGridItem
-                    title="placeholder"
-                    subtitle="placeholder subtitle"
-                    />
-
-
-            </div>
+            </React.Fragment>
         );
     }
 }
