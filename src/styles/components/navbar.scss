@@ -13,8 +13,10 @@
 
     transition: all $transitionSpeed;
     
-    background-color: $dark;
+    background-color: $darkTransparent;
     @include flex(center, center, row);
+
+    z-index: 1;
 
     
     @media screen and (max-width: $widthSmallest) {
