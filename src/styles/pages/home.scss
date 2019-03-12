@@ -28,6 +28,8 @@
         "n n a"
         ". . .";
 
+    z-index: 1;
+
     .news {
         @extend %defaultContainer;
         grid-area: n;
