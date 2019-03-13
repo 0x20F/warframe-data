@@ -48,7 +48,7 @@ class AppRouter extends Component {
             <Router>
                 <React.Fragment>
 
-                    <Navbar/>
+                    {/*<Navbar/>*/}
 
                     <Route 
                         path="/" 
