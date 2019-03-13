@@ -6,9 +6,7 @@
     position: relative;
     width: 100%;
     @include flex(center, center);
-    background-image: linear-gradient(to bottom right, 
-                                    rgba(22, 27, 34, 0.9), 
-                                    rgba(15, 19, 24, 0.9));
+    background-image: $gridItemBackground;
 
     font-family: "Exo 2";
     text-transform: uppercase;

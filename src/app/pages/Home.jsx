@@ -10,7 +10,9 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
+                
                 <div className="background"></div>
+
                 <div className="grid">
                     <div className="news">
                         This is the news component
@@ -28,6 +30,7 @@ class Home extends Component {
 
 
                 </div>
+                
             </React.Fragment>
         );
     }

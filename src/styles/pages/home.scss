@@ -61,11 +61,13 @@
     .news {
         @extend %defaultContainer;
         grid-area: n;
+        background-image: $gridItemBackground;
     }
 
     .alerts {
         @extend %defaultContainer;
         grid-area: a;
+        background-image: $gridItemBackground;
     }
 
 
