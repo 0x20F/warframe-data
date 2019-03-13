@@ -68,15 +68,18 @@
 
         .indicator {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 20px;
+            left: 20px;
             font-size: 17px;
             font-weight: bold;
 
             color: $brightFont;
-            padding: 30px;
-            opacity: 0.8;
+            padding: 10px;
+            opacity: 0.6;
             z-index: 1;
+
+            background-color: $darkTransparent;
+            border-radius: 5px;
         }
 
         img {
