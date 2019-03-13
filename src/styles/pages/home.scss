@@ -59,12 +59,20 @@
     z-index: 1;
 
     .news {
+
         @extend %defaultContainer;
         grid-area: n;
         background-image: $gridItemBackground;
 
         @include flex(center, space-between, column);
         overflow: hidden;
+
+        &:hover {
+            footer {
+                background-position: left bottom;
+            }
+        }
+
 
         .indicator {
             position: absolute;
@@ -99,9 +107,12 @@
             left: 0;
             height: 100px;
             width: 100%;
-            background-color: $darkTransparent;
+            background: linear-gradient(to right, rgba(64, 170, 223, 0.7) 50%, $darkTransparent 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
             @include flex(flex-start, center, column);
             padding-left: 30px;
+            transition: all $transitionSpeed;
             z-index: 1;
 
             header {
