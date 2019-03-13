@@ -52,11 +52,11 @@ class AppRouter extends Component {
 
                     <Route 
                         path="/" 
-                        exact render={ () => <Home /> } />
+                        exact render={ () => <Home news={this.state.data.news}/> } />
 
                     <Route 
                         path="/news" 
-                        render={ () => <News news={this.state.data.news}/> } />
+                        render={ () => <News /> } />
                     
                 </React.Fragment>
             </Router>
