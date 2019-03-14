@@ -18,16 +18,13 @@ body {
     #root {
         width: 100%;
         height: 100%;
-        margin: 0;
-        padding: 0;
-        // For everything that doesn't ovveride
-        font-family: Poppins;
-        color: $lightFont;
-        @include flex(center, flex-start, column);
 
+        background-color: transparent;
 
-        @media screen and (max-width: $widthSmallest) {
-            width: 100%;
-        }
+        display: grid;
+        grid-template-columns: repeat(var(--column-amount), var(--column-width));
+        grid-template-rows: repeat(var(--row-amount), var(--row-height));
+
+        z-index: 2;
     }
 }
