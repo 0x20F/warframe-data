@@ -36,3 +36,21 @@ $widthSmallest      : 720px;
 $widthSmall         : 860px;
 $widthMedium        : 1140px;
 $widthLarge         : 1400px;
+
+
+
+
+// For the grid background and container
+:root {
+    --row-amount: 8;
+    --column-amount: 16;
+
+    --column-width: calc(100vw / var(--column-amount));
+    --row-height: calc(100vh / var(--row-amount));
+
+
+    @media screen and (max-width: 960px) {
+        --row-amount: 16;
+        --column-amount: 8;
+    }
+}
