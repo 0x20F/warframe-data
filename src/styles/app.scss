@@ -8,20 +8,17 @@ html {
 
 body {
     width: 100%;
+    height: 100%;
 
     margin: 0;
     padding: 0;
-    background-color: $dark;
+    background-color: $light;
     overflow-x: hidden;
 
     #root {
-        width: auto;
-        min-height: auto;
+        width: 100%;
+        height: 100%;
         margin: 0;
-        // Move the root container to the left by
-        // the sidebar width so the body doesn't overflow
-        margin-top: $sidebarWidth + $sidebarMargin;
-
         padding: 0;
         // For everything that doesn't ovveride
         font-family: Poppins;
@@ -32,6 +29,5 @@ body {
         @media screen and (max-width: $widthSmallest) {
             width: 100%;
         }
-
     }
 }

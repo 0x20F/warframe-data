@@ -1,0 +1,30 @@
+@import "@Styles/utils/variables";
+
+
+.grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: 
+        linear-gradient($darkTransparent 1px, transparent 1px),
+        linear-gradient(90deg, $darkTransparent 1px, transparent 1px);
+
+    background-size: var(--column-width) var(--row-height);
+    background-position: top left;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        line {
+            stroke: $darkTransparent;
+            stroke-width: 1;
+        }
+    }
+}
