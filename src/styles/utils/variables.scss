@@ -34,8 +34,8 @@ $sidebarMargin      : 40px;
 // Media queries
 $widthSmallest      : 720px;
 $widthSmall         : 960px;
-$widthMedium        : 1140px;
-$widthLarge         : 1400px;
+$widthMedium        : 1200px;
+$widthLarge         : 1600px;
 
 
 
@@ -47,6 +47,11 @@ $widthLarge         : 1400px;
 
     --column-width: calc(100vw / var(--column-amount));
     --row-height: calc(100vh / var(--row-amount));
+
+
+    @media screen and (max-width: 1200px) {
+        --column-amount: 10;
+    }
 
     @media screen and (max-width: $widthSmall) {
         --row-amount: 16;
