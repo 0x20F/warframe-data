@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Link }     from "react-router-dom";
 import Home     from "@Pages/Home";
 import News     from "@Pages/News";
 
+import GridBackground from "@Components/Global/GridBackground";
+import Navbar from "@Components/Global/Navbar";
+
 // For development
 import gameData from "@Temp/gameData";
 
@@ -45,6 +48,9 @@ class AppRouter extends Component {
         return (
             <Router>
                 <React.Fragment>
+
+                    <GridBackground/>
+                    <Navbar/>
 
                     <Route 
                         path="/" 
