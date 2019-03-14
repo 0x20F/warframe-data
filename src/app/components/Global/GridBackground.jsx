@@ -30,11 +30,11 @@ const coords = {
 
 const GridBackground = () => {
 
-    const svgLines = Object.keys(coords).map((key, index) => {
+    const svgLines = Object.keys(coords).map(key => {
         return coords[key].map((c, i) => {
             return (
                 <line 
-                    key={ index + i }
+                    key={ Math.floor(i + Math.random() * 50) }
                     x1={ c.x1 } 
                     y1={ c.y1 } 
                     x2={ c.x2 } 
