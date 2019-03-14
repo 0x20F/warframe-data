@@ -3,6 +3,11 @@ import React, { Component } from "react";
 
 class News extends Component {
 
+    componentDidMount() {
+        // Set navbar header
+        this.props.handleHeader("News");
+    }
+
 
     render() {
 
