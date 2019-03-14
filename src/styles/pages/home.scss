@@ -12,7 +12,6 @@
     display: grid;
     grid-template-columns: repeat(var(--column-amount), var(--column-width));
     grid-template-rows: repeat(var(--row-amount), var(--row-height));
-    grid-gap: 1px;
 
     z-index: 2;
 
