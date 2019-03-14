@@ -18,11 +18,13 @@ class AppRouter extends Component {
         super();
 
         this.state = {
-            data: gameData
+            data: gameData,
+            navHeader: "Grid"
         }
         
-        this.apiUrl     = "https://api.warframestat.us/pc"; // pc should be replaceable
-        this.mounted    = true; // For dev server
+        this.apiUrl         = "https://api.warframestat.us/pc"; // pc should be replaceable
+        this.mounted        = true; // For dev server
+        this.handleHeader   = this.handleHeader.bind(this);
     }
 
 
@@ -44,21 +46,29 @@ class AppRouter extends Component {
     }
 
 
+    handleHeader(newHeader) {
+        this.setState({
+            navHeader: newHeader
+        });
+    }
+
+
     render() {
         return (
             <Router>
                 <React.Fragment>
 
-                    <GridBackground/>
-                    <Navbar/>
+                    <GridBackground />
+                    <Navbar header={this.state.navHeader} handleHeader={this.handleHeader}/>
 
                     <Route 
                         path="/" 
-                        exact render={ () => <Home news={this.state.data.news}/> } />
+                        exact 
+                        render={ () => <Home handleHeader={this.handleHeader}/> } />
 
                     <Route 
                         path="/news" 
-                        render={ () => <News /> } />
+                        render={ () => <News handleHeader={this.handleHeader}/> } />
                     
                 </React.Fragment>
             </Router>
