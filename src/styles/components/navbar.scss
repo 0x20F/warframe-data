@@ -1,0 +1,35 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+
+
+nav {
+    // Position the entire nav where it should be inside the
+    // global grid on #root
+    grid-column: 1 / calc(var(--column-amount) + 1);
+    grid-row: span 2 / calc(var(--row-amount));
+
+    // Turn this element into a grid itself so it's easier for all child elements
+    display: grid;
+        // Give it same amount of columns as parent since it's 100% of it
+    grid-template-columns: repeat(var(--column-amount), var(--column-width));
+
+
+    
+    header {
+        grid-column: 2 / 6;
+        grid-row: calc(var(--row-amount) - 2);
+
+        margin: 0;
+        padding: 0;
+
+        font-family: Montserrat;
+        color: $darkFont;
+        font-size: calc(var(--row-height) * 2);
+
+        @include flex(flex-start, flex-start);
+        text-transform: uppercase;
+        z-index: 3;
+    }
+}
