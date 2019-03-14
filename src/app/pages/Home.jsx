@@ -12,12 +12,16 @@ class Home extends Component {
 
         return (
             <React.Fragment>
-                
-                <GridBackground/>
+            
                 
                 <div className="grid">
-                    
+                    <header>
+                        Grid
+                    </header>
                 </div>
+
+                <GridBackground/>
+
             </React.Fragment>
         );
     }
