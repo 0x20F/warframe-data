@@ -15,19 +15,19 @@ class Home extends Component {
             return (s.length > 30) ? s.substr(0, 29) + "..." : s;
         }
 
+
         return (
             <React.Fragment>
-                
-                <div className="background"></div>
 
                 <div className="grid">
 
+                    {/* TODO: Move into it's own component */}
                     <a href={ mostRecent.link } className="news">
                         <div className="indicator">breaking news</div>
                         <img className="article-image" src={ mostRecent.imageLink }/>
                         <footer>
                             <header>{ truncate(mostRecent.message) }</header>
-                            <span className="time">{ mostRecent.eta }</span>
+                            <span className="time">{ mostRecent.eta /* Temporary, needs formatting */}</span>
                         </footer>
                     </a>
 
@@ -36,11 +36,9 @@ class Home extends Component {
                     </div>
 
 
-                    <SmallGridItem
-                        title="placeholder"
-                        subtitle="placeholder subtitle"
-                        />
-
+                
+                    <SmallGridItem title="placeholder" subtitle="placeholder subtitle"/>
+                  
 
                 </div>
                 

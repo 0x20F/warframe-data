@@ -11,7 +11,11 @@ body {
 
     margin: 0;
     padding: 0;
-    background-color: $dark;
+    background-color: $light;
+    background-image: linear-gradient($darkTransparent 1px, transparent 1px),
+                      linear-gradient(90deg, $darkTransparent 1px, transparent 1px);
+    background-size: 200px 200px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
     overflow-x: hidden;
 
     #root {
@@ -33,5 +37,6 @@ body {
             width: 100%;
         }
 
+        display: none;
     }
 }
