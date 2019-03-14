@@ -33,9 +33,12 @@ const GridBackground = () => {
     const svgLines = Object.keys(coords).map((key, index) => {
         return coords[key].map((c, i) => {
             return (
-                <svg key={ index + i }>
-                    <line x1={ c.x1 } y1={ c.y1 } x2={ c.x2 } y2={ c.y2 }/>
-                </svg>
+                <line 
+                    key={ index + i }
+                    x1={ c.x1 } 
+                    y1={ c.y1 } 
+                    x2={ c.x2 } 
+                    y2={ c.y2 }/>
             )
         });
     });
@@ -43,7 +46,9 @@ const GridBackground = () => {
 
     return (
         <div className="grid-background">
-            { svgLines }
+            <svg>
+                { svgLines }
+            </svg>
         </div>
     );
 }
