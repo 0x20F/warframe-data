@@ -18,13 +18,13 @@
 
 
 
-$phone: 700px;
+$phone: 600px;
 $tablet: 900px;
 $desktop: 1200px;
 $desktopPlus: 1800px;
 
 // What are these names!?!?!
-@mixin for-phone-only {
+@mixin for-phones-only {
     @media screen and (max-width: $phone) { @content; }
 }
 
