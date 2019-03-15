@@ -18,24 +18,24 @@
 
 
 
-$phone: 720px;
-$tablet: 860px;
+$phone: 700px;
+$tablet: 900px;
 $desktop: 1200px;
+$desktopPlus: 1800px;
 
-@mixin phone($limit: min-width) {
-    @media screen and ($limit: #{$phone}) {
-        @content;
-    }
+// What are these names!?!?!
+@mixin for-phone-only {
+    @media screen and (max-width: $phone) { @content; }
 }
 
-@mixin tablet($limit: min-width) {
-    @media screen and ($limit: #{$tablet}) {
-        @content;
-    }
+@mixin for-tablet-only {
+    @media screen and (max-width: $tablet) { @content; }
 }
 
-@mixin desktop($limit: min-width) {
-    @media screen and ($limit: #{$desktop}) {
-        @content;
-    }
+@mixin for-tablet-and-above {
+    @media screen and (min-width: $tablet) { @content; }
+}
+
+@mixin for-small-desktop {
+    @media screen and (max-width: $desktop) { @content; }
 }

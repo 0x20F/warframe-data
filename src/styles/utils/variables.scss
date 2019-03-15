@@ -1,3 +1,5 @@
+@import "@Styles/utils/mixins"; // For the :root media queries
+
 $dark               : #161b22;
 $darkTransparent    : rgba(22, 27, 34, 0.1);
 $darker             : #20232a;
@@ -31,14 +33,6 @@ $sidebarWidth       : 70px;
 $sidebarMargin      : 40px;
 
 
-// Media queries
-$widthSmallest      : 720px;
-$widthSmall         : 960px;
-$widthMedium        : 1200px;
-$widthLarge         : 1600px;
-
-
-
 
 // For the grid background and container
 :root {
@@ -49,11 +43,11 @@ $widthLarge         : 1600px;
     --row-height: calc(100vh / var(--row-amount));
 
 
-    @media screen and (max-width: 1200px) {
+    @include for-small-desktop {
         --column-amount: 10;
     }
 
-    @media screen and (max-width: $widthSmall) {
+    @include for-tablet-only {
         --row-amount: 16;
         --column-amount: 8;
     }
