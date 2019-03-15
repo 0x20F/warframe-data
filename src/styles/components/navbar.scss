@@ -2,6 +2,8 @@
 @import "@Styles/utils/mixins";
 @import "@Styles/utils/variables";
 
+@import "~sass-burger/burger";
+
 
 
 nav {
@@ -15,6 +17,7 @@ nav {
         // Give it same amount of columns as parent since it's 100% of it
     grid-template-columns: repeat(var(--column-amount), var(--column-width));
     grid-template-rows: repeat(3, var(--row-height));
+
 
     
     header {
@@ -33,28 +36,94 @@ nav {
         z-index: 3;
     }
 
-    a {
+    .quick-nav {
+        grid-column: 1 / 6;
         grid-row: 3;
 
-        font-family: Poppins;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $darkFont;
-        font-size: 18px;
-        opacity: 0.5;
+        z-index: 4;
+        @include flex(flex-start, flex-start);
 
+        a {    
+            font-family: Poppins;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $darkFont;
+            font-size: 20px;
+            opacity: 0.5;
+
+            width: var(--column-width);
+            padding-top: 20px;
+
+            @include flex(center, flex-start);
+            transition: all $transitionSpeed;
+        
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .burger {
+        display: none;
+        grid-column: calc(var(--column-amount) - 2);
+        grid-row: 1;
 
         width: 100%;
         height: 100%;
-        padding-top: 20px;
 
-        @include flex(center, flex-start);
-        transition: all $transitionSpeed;
+        .icon {
+            @include burger(30px, 4px, 5px, $darkFont);
+            
+            &, &::after, &::before {
+                display: none;
+                border-radius: 40px;
+            }
+        }
+    }
 
-        z-index: 4;
 
-        &:hover {
-            opacity: 1;
+
+    /* 
+    / -------------------------------------- /
+    /                                        /
+    /   Media queries from here downwards!!  /
+    /                                        /
+    / -------------------------------------- /
+    */
+    @include for-phones-only {
+        grid-row: 2;
+
+        header {
+            grid-row: 1;
+            font-size: var(--row-height);
+            @include flex(flex-start, center);
+        }
+
+        .quick-nav {
+            display: none;
+        }
+
+        .burger {
+            @include flex(center, center);
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 4;
+    
+            .icon {
+                @include burger(30px, 4px, 5px, $darkFont);
+                
+                &, &::after, &::before {
+                    border-radius: 40px;
+                }
+            }
+    
+            &.active {
+                .icon {
+                    @include burger-to-cross;
+                }
+            }
         }
     }
 }
