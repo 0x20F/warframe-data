@@ -29,7 +29,11 @@ $desktopPlus: 1800px;
 }
 
 @mixin for-tablet-only {
-    @media screen and (max-width: $tablet) { @content; }
+    @media screen and (max-width: $tablet) and (min-width: $phone) { @content; }
+}
+
+@mixin for-tablet-and-below {
+    @media screen and(max-width: $tablet) { @content; }
 }
 
 @mixin for-tablet-and-above {

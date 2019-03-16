@@ -51,7 +51,7 @@ class Navbar extends Component {
                 <header>{ header }</header>
                 <div className="quick-nav">{ elements }</div>
                 <div 
-                    className={`burger ${active ? "active" : ""}`}
+                    className={ `burger ${ active ? "active" : "" }` }
                     onClick={this.handleBurgerClick} >
 
                     <span className="icon"></span>

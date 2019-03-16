@@ -90,6 +90,18 @@ nav {
     /                                        /
     / -------------------------------------- /
     */
+    @include for-tablet-only {
+        grid-row: 2;
+
+        .quick-nav {
+            @include flex(flex-start, center);
+
+            a {
+                padding: 0;
+            }
+        }
+    }
+
     @include for-phones-only {
         grid-row: 2;
 
@@ -126,4 +138,5 @@ nav {
             }
         }
     }
+
 }
