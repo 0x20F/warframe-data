@@ -20,7 +20,7 @@ class DevInfo extends Component {
         }
         this.update = this.update.bind(this);
         this.hideElement = this.hideElement.bind(this);
-        this.currentColor = this.currentColor.bind(this);
+        this.currentViewport = this.currentViewport.bind(this);
     }
 
     componentDidMount() {
@@ -49,17 +49,23 @@ class DevInfo extends Component {
     }
 
     // Set the color based on width
-    currentColor() {
+    currentViewport() {
         const colors = {phone: "#2d7dd2", tablet: "#97cc04", desktop: "#f8333c", desktopPlus: "#000"};
         const keys = Object.keys(this.sizes);
         
         for(const key of keys) {
             if(this.state.width < this.sizes[key]) {
-                return colors[key];
+                return {
+                    color: colors[key],
+                    viewport: key
+                };
             } 
             // To make sure that nothing breaks after 1800px
             else if(this.state.width >= this.sizes.desktopPlus) {
-                return colors.desktopPlus;
+                return {
+                    color: colors.desktopPlus,
+                    viewport: key
+                };
             }
         }
 
@@ -68,8 +74,9 @@ class DevInfo extends Component {
 
     render() {
         const hidden = this.state.hidden;
+        const viewport = this.currentViewport();
         const style = {
-            color: this.currentColor()
+            color: viewport.color
         };
 
         return (
@@ -77,6 +84,7 @@ class DevInfo extends Component {
                 className={ `device-info ${hidden ? "hidden" : ""}` } 
                 onClick={this.hideElement} >
 
+                <span>{viewport.viewport}</span>
                 <span style={style}>{this.state.width}px</span>
                 <span>{this.state.height}px</span>
             </div>
