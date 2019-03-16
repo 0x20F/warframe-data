@@ -27,7 +27,7 @@ module.exports = (env, argv) => {
                 "@Styles": path.resolve(__dirname, "src/styles"),
 
                 // Temporary resolve
-                "@Temp": path.resolve(__dirname, "src/app/temp")
+                "@Dev": path.resolve(__dirname, "src/app/dev")
             }
         },
 

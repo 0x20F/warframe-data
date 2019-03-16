@@ -9,7 +9,8 @@ import GridBackground from "@Components/Global/GridBackground";
 import Navbar from "@Components/Global/Navbar";
 
 // For development
-import gameData from "@Temp/gameData";
+import gameData from "@Dev/gameData";
+import DevInfo from "@Dev/DevInfo";
 
 
 class AppRouter extends Component {
@@ -57,6 +58,9 @@ class AppRouter extends Component {
         return (
             <Router>
                 <React.Fragment>
+
+                    <DevInfo/>
+
 
                     <GridBackground />
                     <Navbar header={this.state.navHeader} handleHeader={this.handleHeader}/>
