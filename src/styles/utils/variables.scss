@@ -42,7 +42,7 @@ $gridItemBackground : linear-gradient(to bottom right,
         --column-amount: 10;
     }
 
-    @include for-tablet-only {
+    @include for-tablet-and-below {
         --row-amount: 16;
         --column-amount: 8;
     }
