@@ -1,0 +1,30 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+.device-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: auto;
+    padding: 20px;
+
+    @include flex(flex-end, center, column);
+    transition: all $transitionSpeed;
+    cursor: pointer;
+
+    font-family: Poppins;
+
+    z-index: 50000;
+
+    &.hidden {
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+
+}
