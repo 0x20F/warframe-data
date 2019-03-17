@@ -8,7 +8,7 @@ import "@Styles/components/sidebar";
 export const Sidebar = (props) => {
 
     const links = props.elements;
-    const icons = ["archway", "book-reader"]; // Should be the length of links
+    const icons = ["home", "book-reader"]; // Should be the length of links
 
     const elements = Object.keys(links).map((key, index) => {
         return (
