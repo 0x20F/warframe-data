@@ -64,7 +64,7 @@ class DevInfo extends Component {
             else if(this.state.width >= this.sizes.desktopPlus) {
                 return {
                     color: colors.desktopPlus,
-                    viewport: key
+                    viewport: "desktopPlus"
                 };
             }
         }
