@@ -6,11 +6,12 @@ import Home     from "@Pages/Home";
 import News     from "@Pages/News";
 
 import GridBackground from "@Components/Global/GridBackground";
-import Navbar from "@Components/Global/Navbar";
+import Navbar from "@Components/Global/Nav/Navbar";
 
 // For development
 import gameData from "@Dev/gameData";
 import DevInfo from "@Dev/DevInfo";
+
 
 
 class AppRouter extends Component {

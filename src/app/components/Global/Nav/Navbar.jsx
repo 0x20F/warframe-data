@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { Sidebar } from "@Components/Global/Nav/Sidebar";
+
 import "@Styles/components/navbar";
 
 
@@ -58,9 +60,9 @@ class Navbar extends Component {
                     <span className="icon"></span>
                 </div>
 
-                <div className={ `sidebar ${ active ? "active" : "" }` }>
-                    { elements }
-                </div>
+                <Sidebar 
+                    active={ active }
+                    elements= { this.links }/>
             </nav>
         );
     }
