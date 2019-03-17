@@ -82,23 +82,7 @@ nav {
     }
 
     .sidebar {
-        position: absolute;
-        top: calc(var(--row-height) * 3);
-        right: 0;
-        
-        width: calc(var(--column-width) * 2);
-        height: calc(var(--row-height) * 7);
-
-        @include flex(center, flex-start, column);
-        border-radius: 5px;
-        
-        z-index: 50;
-        transition: all .5s;
-
-        &.active {
-            right: calc(var(--column-width) * -1);
-            opacity: 0;
-        }
+        display: none;
     }
 
 
@@ -155,6 +139,27 @@ nav {
                 .icon {
                     @include burger-to-cross;
                 }
+            }
+        }
+
+        .sidebar {
+            position: absolute;
+            top: calc(var(--row-height) * 3);
+            right: calc(var(--column-width) * -1);
+                opacity: 0;
+            
+            width: calc(var(--column-width) * 2);
+            height: calc(var(--row-height) * 7);
+
+            @include flex(center, flex-start, column);
+            border-radius: 5px;
+            
+            z-index: 50;
+            transition: all .5s;
+
+            &.active {
+                right: 0;
+                opacity: 1;
             }
         }
     }
