@@ -8,6 +8,7 @@ import ReactDOM     from "react-dom";
 // Fontawesome icons
 import { library }  from "@fortawesome/fontawesome-svg-core";
 import { faBookReader, faHome }   from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 /**
  * Icon sizes:
  *  lg, xs, sm
@@ -16,7 +17,8 @@ import { faBookReader, faHome }   from "@fortawesome/free-solid-svg-icons";
  */
 library.add(
     faHome,
-    faBookReader);
+    faBookReader,
+    faTwitter); // Maybe twitch instead?
 
 
 
