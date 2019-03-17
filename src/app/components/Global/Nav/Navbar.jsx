@@ -17,11 +17,29 @@ class Navbar extends Component {
         };
 
         this.state = {
-            sidebarActive: false
+            sidebarActive: false,
+            onMobile: window.innerWidth < 600 // TODO: Maybe have a file with these numbers
         }
 
+        this.updateWidth = this.updateWidth.bind(this);
         this.handleBurgerClick = this.handleBurgerClick.bind(this);
     }
+
+    
+    componentDidMount() {
+        window.addEventListener("resize", this.updateWidth);
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWidth);
+    }
+
+    
+    updateWidth() {
+        this.setState({
+            onMobile: window.innerWidth < 600
+        })
+    }
+
 
     // Handle the state change on burger menu click
     handleBurgerClick() {
@@ -45,25 +63,30 @@ class Navbar extends Component {
 
         // Have easier access to the state variable
         const active    = this.state.sidebarActive;
-
+        const mobile    = this.state.onMobile;
 
 
         return (
             <nav>
                 <header>{ header }</header>
-                <div className="quick-nav">{ elements }</div>
+                { !mobile && <div className="quick-nav">{ elements }</div> }
 
-                <div 
-                    className={ `burger ${ active ? "active" : "" }` }
-                    onClick={this.handleBurgerClick} >
+                { mobile && // If on mobile
+                    <React.Fragment>
+                        <div 
+                            className={ `burger ${ active ? "active" : "" }` }
+                            onClick={this.handleBurgerClick} >
 
-                    <span className="icon"></span>
-                </div>
+                            <span className="icon"></span>
+                        </div>
 
-                <Sidebar
-                    header= { header }
-                    active={ active }
-                    elements= { this.links }/>
+                        <Sidebar
+                            header= { header }
+                            active={ active }
+                            elements= { this.links }/>
+
+                    </React.Fragment> 
+                }
             </nav>
         );
     }
