@@ -5,24 +5,53 @@
 .sidebar {
     display: none;
 
+    a {
+        width: 100%;
+
+        @include flex(center, center, column);
+        padding-top: calc(var(--column-width) / 2);
+        padding-bottom: calc(var(--column-width) / 2);
+
+        text-decoration: none;
+        font-size: 13px;
+        font-family: Poppins;
+        color: $lighterFont;
+
+        svg {
+            margin-bottom: 5px;
+        }
+
+        &.stickied {
+            // Twitter in this case
+            background-color: $dark;
+            color: #1da1f2;
+        }
+    }
+
+
+
     @include for-phones-only {
         position: absolute;
         top: calc(var(--row-height) * 3);
         right: calc(var(--column-width) * -1);
         opacity: 0;
+        overflow: hidden;
             
-        width: calc(var(--column-width) * 2);
-        height: calc(var(--row-height) * 7);
+        width: 100px;
+        height: auto;
 
         @include flex(center, flex-start, column);
-        border-radius: 5px;
+        border-radius: 10px;
             
         z-index: 50;
-        transition: all .5s;
+        transition: all $transitionSpeed;
+
+        background-color: $darker;
 
         &.active {
-            right: 0;
+            right: calc(var(--column-width) * 0.2);
             opacity: 1;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
         }
     }
 }
