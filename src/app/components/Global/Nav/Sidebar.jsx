@@ -16,7 +16,7 @@ export const Sidebar = (props) => {
 
         return (
             <Link to={links[key]} key={ index }> 
-                <FontAwesomeIcon icon={icons[index]} />
+                <FontAwesomeIcon icon={icons[index]} size="lg"/>
                 { key } 
             </Link>
         )
@@ -26,6 +26,11 @@ export const Sidebar = (props) => {
     return (
         <div className={ `sidebar ${ props.active ? "active" : "" }` }>
             { elements }
+
+            <a href="https://twitter.com/PlayWarframe" key="531ui" className="stickied">
+                <FontAwesomeIcon icon={["fab", "twitter"]} size="lg"/>
+                Twitter
+            </a>
         </div>
     );
 };
