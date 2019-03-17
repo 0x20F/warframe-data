@@ -60,7 +60,8 @@ class Navbar extends Component {
                     <span className="icon"></span>
                 </div>
 
-                <Sidebar 
+                <Sidebar
+                    header= { header }
                     active={ active }
                     elements= { this.links }/>
             </nav>
