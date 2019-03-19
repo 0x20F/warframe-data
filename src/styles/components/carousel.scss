@@ -1,0 +1,26 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+
+.home-carousel {
+    // Position inside the global grid
+    grid-row: 2 / 6;
+    grid-column: 1 / calc(var(--column-amount) + 1);
+
+    overflow: hidden;
+
+    background-color: red;
+
+    z-index: 4;
+
+    @include for-tablet-only {
+        grid-row: 6 / 13;
+    }
+
+    @include for-phones-only {
+        grid-row: 4 / var(--row-amount);
+    }
+
+    // TODO: Handle very big screens too
+}
