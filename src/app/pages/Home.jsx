@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Carousel from "@Components/Carousel";
+import Carousel from "@Components/Carousel/Carousel";
 
 import "@Styles/pages/home";
 
@@ -20,7 +20,16 @@ class Home extends Component {
         return (
             <React.Fragment>
             
-                <Carousel />
+                <Carousel>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                </Carousel>
 
             </React.Fragment>
         );

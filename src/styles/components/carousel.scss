@@ -2,17 +2,43 @@
 @import "@Styles/utils/mixins";
 @import "@Styles/utils/variables";
 
+:root {
+    // Jesus
+    --slot-basis: calc(var(--column-width) * 4);
+    --slot-margin: var(--column-width);
+    --slot-basis-n: calc(-1 * calc(var(--column-width) * 4) - var(--slot-margin));
+}
+
 
 .home-carousel {
     // Position inside the global grid
     grid-row: 2 / 6;
     grid-column: 1 / calc(var(--column-amount) + 1);
 
-    overflow: hidden;
-
     background-color: red;
-
     z-index: 4;
+
+    @include flex(flex-start, center);
+
+    .wrapper {
+        width: 100%;
+        overflow: hidden;
+
+        .carousel-container {
+            display: flex;
+            transition: all .5s;
+    
+            .carousel-slot {
+                flex: 1 0 100%;
+                flex-basis: var(--slot-basis);
+                margin-left: var(--slot-margin);
+                background-color: green;
+            }
+        }
+    }
+
+
+
 
     @include for-tablet-only {
         grid-row: 6 / 13;
