@@ -32,8 +32,6 @@ class Carousel extends Component {
                 currentPosition: moveTo
             });
         }
-
-        console.log(position);
     }
 
     render() {
@@ -48,9 +46,7 @@ class Carousel extends Component {
 
                         { children.map((child, index) => (
                             <CarouselSlot 
-                                key={ index }
-                                position={ index }>
-                                { index }
+                                key={ index }>
                                 { child }
                             </CarouselSlot>
                         )) }

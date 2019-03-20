@@ -1,20 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class CarouselSlot extends Component {
+const CarouselSlot = (props) => {
     
-    constructor() {
-        super();
-    }
-
-    render() {
-        return (
-            <div className="carousel-slot">
-                { this.props.children }
-            </div>
-        );
-    }
-
+    return (
+        <div className="carousel-slot">
+            { props.children }
+        </div>
+    );
 }
 
 export default CarouselSlot;
