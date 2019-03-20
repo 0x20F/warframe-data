@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
+    "public-start": "webpack-dev-server --open --mode development --host 0.0.0.0",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -24,6 +25,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-easy-swipe": "0.0.17",
     "react-router-dom": "^4.3.1",
     "sass-burger": "^1.3.1"
   },
