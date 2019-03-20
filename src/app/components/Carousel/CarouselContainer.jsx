@@ -4,7 +4,7 @@ import React from "react";
 const CarouselContainer = (props) => {
 
     const style = {
-        transform: `translate(calc(var(--slot-basis-n) * ${props.position}))`
+        transform: `translateX(calc(var(--slot-basis-n) * ${props.position}))`
     }
 
     return (
