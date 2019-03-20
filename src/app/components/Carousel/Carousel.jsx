@@ -16,6 +16,7 @@ class Carousel extends Component {
         }
     }
 
+    // TODO: Use this type everywhere instead of binding in constructor
     updatePosition = () => {
         const { children } = this.props;
         const position = this.state.currentPosition;
@@ -33,11 +34,11 @@ class Carousel extends Component {
     }
 
     render() {
-        const { children } = this.props;
+        const { children, className } = this.props;
         const { currentPosition } = this.state;
 
         return (
-            <div className="home-carousel">
+            <div className={ className }>
 
                 <Wrapper>
                     <CarouselContainer position={ currentPosition }>

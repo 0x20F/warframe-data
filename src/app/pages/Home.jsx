@@ -20,7 +20,7 @@ class Home extends Component {
         return (
             <React.Fragment>
             
-                <Carousel>
+                <Carousel className="home-carousel">
                     <div>Item</div>
                     <div>Item</div>
                     <div>Item</div>
