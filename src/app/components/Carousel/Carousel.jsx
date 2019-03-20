@@ -17,16 +17,19 @@ class Carousel extends Component {
     }
 
     // TODO: Use this type everywhere instead of binding in constructor
-    updatePosition = () => {
+    updatePosition = (next) => {
+        // next is boolean... use typescript? 
+        // true go next false go prev
+
         const { children } = this.props;
         const position = this.state.currentPosition;
 
         const total = children.length;
-        const next = position + 1;
+        const moveTo = next ? position + 1 : position - 1;
 
-        if(next < total) {
+        if(moveTo < total && moveTo >= 0) {
             this.setState({
-                currentPosition: position + 1
+                currentPosition: moveTo
             });
         }
 
@@ -55,7 +58,8 @@ class Carousel extends Component {
                     </CarouselContainer>
                 </Wrapper>
 
-                <button onClick={this.updatePosition}>Next</button>
+                <button onClick={() => this.updatePosition(false)}>Prev</button>
+                <button onClick={() => this.updatePosition(true)}>Next</button>
             </div>
         );
     }
