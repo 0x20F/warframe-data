@@ -63,8 +63,8 @@ class Carousel extends Component {
                 </Swipe>
 
 
-                <button onClick={() => this.updatePosition(false)}>Prev</button>
-                <button onClick={() => this.updatePosition(true)}>Next</button>
+                <button className="prev" onClick={() => this.updatePosition(false)}>Prev</button>
+                <button className="next" onClick={() => this.updatePosition(true)}>Next</button>
             </div>
         );
     }
