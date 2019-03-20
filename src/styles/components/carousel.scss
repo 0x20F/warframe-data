@@ -15,17 +15,39 @@
     grid-row: 2 / 6;
     grid-column: 1 / calc(var(--column-amount) + 1);
 
-    background-color: red;
+    position: relative;
     z-index: 4;
 
-    @include flex(flex-start, center);
+    @include flex(flex-start, center, column);
+
+    // Handle the Swipe component div
+    & > div {
+        width: 100%;
+        height: 100%;
+    }
+
+    button {
+        position: absolute;
+        height: 100%;
+        border: none;
+        opacity: 0.5;
+
+        &.prev {
+            left: 0;
+        }
+
+        &.next {
+            right: 0;
+        }
+    }
 
     .wrapper {
         width: 100%;
         height: 100%;
         overflow: hidden;
         background-color: blue;
-
+        @include flex(flex-start, center);
+        
 
         .carousel-container {
             display: flex;
