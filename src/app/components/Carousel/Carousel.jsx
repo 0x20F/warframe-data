@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Swipe from "react-easy-swipe";
 
 import CarouselSlot from "@Components/Carousel/CarouselSlot";
 import CarouselContainer from "@Components/Carousel/CarouselContainer";
@@ -41,18 +42,26 @@ class Carousel extends Component {
         return (
             <div className={ className }>
 
-                <Wrapper>
-                    <CarouselContainer position={ currentPosition }>
+                <Swipe
+                    allowMouseEvents={true}
+                    onSwipeLeft={() => this.updatePosition(true)}
+                    onSwipeRight={() => this.updatePosition(false)}>
+                
+                    <Wrapper>
+                        <CarouselContainer position={ currentPosition }>
 
-                        { children.map((child, index) => (
-                            <CarouselSlot 
-                                key={ index }>
-                                { child }
-                            </CarouselSlot>
-                        )) }
+                            { children.map((child, index) => (
+                                <CarouselSlot 
+                                    key={ index }>
+                                    { child }
+                                </CarouselSlot>
+                            )) }
 
-                    </CarouselContainer>
-                </Wrapper>
+                        </CarouselContainer>
+                    </Wrapper>
+
+                </Swipe>
+
 
                 <button onClick={() => this.updatePosition(false)}>Prev</button>
                 <button onClick={() => this.updatePosition(true)}>Next</button>
