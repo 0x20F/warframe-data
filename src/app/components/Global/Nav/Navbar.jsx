@@ -19,14 +19,12 @@ class Navbar extends Component {
         this.state = {
             sidebarActive: false
         }
-
-        this.handleBurgerClick = this.handleBurgerClick.bind(this);
     }
     
 
 
     // Handle the state change on burger menu click
-    handleBurgerClick() {
+    handleBurgerClick = () => {
         this.setState(state => {
             return {
                 sidebarActive: !state.sidebarActive

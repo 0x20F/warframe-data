@@ -27,8 +27,6 @@ class AppRouter extends Component {
         
         this.apiUrl         = "https://api.warframestat.us/pc"; // pc should be replaceable
         this.mounted        = true; // For dev server
-        this.handleHeader   = this.handleHeader.bind(this);
-        this.updateWidth    = this.updateWidth.bind(this);
     }
 
 
@@ -51,13 +49,13 @@ class AppRouter extends Component {
         window.removeEventListener("resize", this.updateWidth);
     }
 
-    updateWidth() {
+    updateWidth = () => {
         this.setState({
             onMobile: window.innerWidth < 600
         })
     }
 
-    handleHeader(newHeader) {
+    handleHeader = (newHeader) => {
         this.setState({
             navHeader: newHeader
         });
@@ -70,8 +68,6 @@ class AppRouter extends Component {
                 <React.Fragment>
 
                     <DevInfo/>
-
-
                     <GridBackground />
                     <Navbar 
                         header={this.state.navHeader} 
