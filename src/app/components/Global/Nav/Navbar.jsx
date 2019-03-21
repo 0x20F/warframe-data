@@ -17,28 +17,12 @@ class Navbar extends Component {
         };
 
         this.state = {
-            sidebarActive: false,
-            onMobile: window.innerWidth < 600 // TODO: Maybe have a file with these numbers
+            sidebarActive: false
         }
 
-        this.updateWidth = this.updateWidth.bind(this);
         this.handleBurgerClick = this.handleBurgerClick.bind(this);
     }
-
     
-    componentDidMount() {
-        window.addEventListener("resize", this.updateWidth);
-    }
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.updateWidth);
-    }
-
-    
-    updateWidth() {
-        this.setState({
-            onMobile: window.innerWidth < 600
-        })
-    }
 
 
     // Handle the state change on burger menu click
@@ -63,7 +47,7 @@ class Navbar extends Component {
 
         // Have easier access to the state variable
         const active    = this.state.sidebarActive;
-        const mobile    = this.state.onMobile;
+        const mobile    = this.props.onMobile;
 
 
         return (

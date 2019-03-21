@@ -20,7 +20,10 @@ class Home extends Component {
         return (
             <React.Fragment>
             
-                <Carousel className="home-carousel">
+                <Carousel 
+                    className="home-carousel"
+                    onMobile={this.props.onMobile}>
+
                     <div>Item 1</div>
                     <div>Item 2</div>
                     <div>Item 3</div>
@@ -29,6 +32,7 @@ class Home extends Component {
                     <div>Item 6</div>
                     <div>Item 7</div>
                     <div>Item 8</div>
+                    
                 </Carousel>
 
             </React.Fragment>

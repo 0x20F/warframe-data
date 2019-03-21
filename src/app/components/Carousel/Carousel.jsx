@@ -36,7 +36,7 @@ class Carousel extends Component {
     }
 
     render() {
-        const { children, className } = this.props;
+        const { children, className, onMobile } = this.props;
         const { currentPosition } = this.state;
 
         return (
@@ -63,8 +63,12 @@ class Carousel extends Component {
                 </Swipe>
 
 
-                <button className="prev" onClick={() => this.updatePosition(false)}>Prev</button>
-                <button className="next" onClick={() => this.updatePosition(true)}>Next</button>
+                { !onMobile && // If not on a phone
+                    <React.Fragment>
+                        <button className="prev" onClick={() => this.updatePosition(false)}>Prev</button>
+                        <button className="next" onClick={() => this.updatePosition(true)}>Next</button>
+                    </React.Fragment>
+                }
             </div>
         );
     }

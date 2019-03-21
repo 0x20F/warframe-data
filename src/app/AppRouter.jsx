@@ -21,12 +21,14 @@ class AppRouter extends Component {
 
         this.state = {
             data: gameData,
+            onMobile: window.innerWidth < 600, // TODO: a centralized place for all variables?
             navHeader: "Grid"
         }
         
         this.apiUrl         = "https://api.warframestat.us/pc"; // pc should be replaceable
         this.mounted        = true; // For dev server
         this.handleHeader   = this.handleHeader.bind(this);
+        this.updateWidth    = this.updateWidth.bind(this);
     }
 
 
@@ -40,13 +42,20 @@ class AppRouter extends Component {
         //             gameData: response
         //         })
         //     });
+        window.addEventListener("resize", this.updateWidth);
     }
 
 
     componentWillUnmount() {
         // this.mounted = false;
+        window.removeEventListener("resize", this.updateWidth);
     }
 
+    updateWidth() {
+        this.setState({
+            onMobile: window.innerWidth < 600
+        })
+    }
 
     handleHeader(newHeader) {
         this.setState({
@@ -64,16 +73,27 @@ class AppRouter extends Component {
 
 
                     <GridBackground />
-                    <Navbar header={this.state.navHeader} handleHeader={this.handleHeader}/>
+                    <Navbar 
+                        header={this.state.navHeader} 
+                        handleHeader={this.handleHeader}
+                        onMobile={this.state.onMobile}/>
 
                     <Route 
                         path="/" 
                         exact 
-                        render={ () => <Home handleHeader={this.handleHeader}/> } />
+                        render={ 
+                            () => <Home 
+                                    handleHeader={this.handleHeader}
+                                    onMobile={this.state.onMobile}/> 
+                        } />
 
                     <Route 
                         path="/news" 
-                        render={ () => <News handleHeader={this.handleHeader}/> } />
+                        render={ 
+                            () => <News 
+                                handleHeader={this.handleHeader}
+                                onMobile={this.state.onMobile}/> 
+                        } />
                     
                 </React.Fragment>
             </Router>
