@@ -31,7 +31,7 @@
 
 
     @include for-phones-only {
-        position: absolute;
+        position: fixed;
         top: calc(var(--row-height) * 3);
         right: -100px;
         opacity: 0;
