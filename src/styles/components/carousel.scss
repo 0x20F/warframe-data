@@ -6,10 +6,18 @@
     // Jesus
     --slot-basis: calc(var(--column-width) * 4);
     --slot-margin: var(--column-width);
-    --slot-basis-n: calc(-1 * calc(var(--column-width) * 4) - var(--slot-margin));
+    --slot-basis-n: calc(-1 * var(--slot-basis) - var(--slot-margin));
+
+    @include for-phones-only {
+        --slot-basis: calc(var(--column-width) * 6);
+    }
 }
 
 
+/*
+    The styles can be overriden by creating new rules
+    for the class the carousel gets I guess
+*/
 .home-carousel {
     // Position inside the global grid
     grid-row: 2 / 6;
@@ -71,6 +79,10 @@
 
     @include for-phones-only {
         grid-row: 4 / var(--row-amount);
+
+        button {
+            display: none;
+        }
     }
 
     // TODO: Handle very big screens too
