@@ -18,7 +18,13 @@
         flex: 1 0 100%;
         flex-basis: var(--slot-basis);
         margin-left: var(--slot-margin);
-        background-color: #7289da;
         height: 100%;
+
+        background-color: #7289da;
+        border-radius: 10px;
+
+        @include flex(center, flex-start);
+        font-family: Poppins;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
     }
 }
