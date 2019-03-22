@@ -1,5 +1,6 @@
 import React from "react";
 
+import "@Styles/components/carousel/carousel-container";
 
 const CarouselContainer = (props) => {
 

@@ -1,0 +1,24 @@
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+
+:root {
+    // Jesus
+    --slot-basis: calc(var(--column-width) * 4);
+    --slot-margin: var(--column-width);
+    --slot-basis-n: calc(-1 * var(--slot-basis) - var(--slot-margin));
+
+    @include for-phones-only {
+        --slot-basis: calc(var(--column-width) * 6);
+    }
+}
+
+.home-carousel {
+    .carousel-slot {
+        flex: 1 0 100%;
+        flex-basis: var(--slot-basis);
+        margin-left: var(--slot-margin);
+        background-color: #7289da;
+        height: 100%;
+    }
+}

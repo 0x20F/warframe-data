@@ -87,8 +87,8 @@ class AppRouter extends Component {
                         path="/news" 
                         render={ 
                             () => <News 
-                                handleHeader={this.handleHeader}
-                                onMobile={this.state.onMobile}/> 
+                                    handleHeader={this.handleHeader}
+                                    onMobile={this.state.onMobile}/> 
                         } />
                     
                 </React.Fragment>

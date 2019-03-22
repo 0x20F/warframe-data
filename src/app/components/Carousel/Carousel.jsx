@@ -5,7 +5,7 @@ import CarouselSlot from "@Components/Carousel/CarouselSlot";
 import CarouselContainer from "@Components/Carousel/CarouselContainer";
 import Wrapper from "@Components/Carousel/Wrapper";
 
-import "@Styles/components/carousel";
+import "@Styles/components/carousel/carousel";
 
 
 class Carousel extends Component {
