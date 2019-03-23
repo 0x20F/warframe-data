@@ -42,6 +42,7 @@ class Carousel extends Component {
         
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
+        const iconSize = onMobile ? "2x" : "3x";
 
         return (
             <div className={ className }>
@@ -71,7 +72,7 @@ class Carousel extends Component {
                     className={`prev${atStart ? " hidden" : ""}`} 
                     onClick={() => this.updatePosition(false)}>
 
-                    <FontAwesomeIcon icon="chevron-left" size="2x"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon="chevron-left" size={iconSize}></FontAwesomeIcon>
                 </button>
 
                 {
@@ -83,7 +84,7 @@ class Carousel extends Component {
                     className={`next${atEnd ? " hidden" : ""}`} 
                     onClick={() => this.updatePosition(true)}>
 
-                    <FontAwesomeIcon icon="chevron-right" size="2x"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon="chevron-right" size={iconSize}></FontAwesomeIcon>
                 </button>
             
             </div>
