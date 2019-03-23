@@ -71,7 +71,7 @@ class Carousel extends Component {
                     className={`prev${atStart ? " hidden" : ""}`} 
                     onClick={() => this.updatePosition(false)}>
 
-                    <FontAwesomeIcon icon="chevron-left" size="3x"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon="chevron-left" size="2x"></FontAwesomeIcon>
                 </button>
 
                 {
@@ -83,7 +83,7 @@ class Carousel extends Component {
                     className={`next${atEnd ? " hidden" : ""}`} 
                     onClick={() => this.updatePosition(true)}>
 
-                    <FontAwesomeIcon icon="chevron-right" size="3x"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon="chevron-right" size="2x"></FontAwesomeIcon>
                 </button>
             
             </div>
