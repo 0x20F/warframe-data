@@ -15,8 +15,13 @@ export const Sidebar = (props) => {
         if(header === key) return;
 
         return (
-            <Link to={links[key]} key={ index }> 
+            <Link 
+                to={ links[key] } 
+                key={ index }
+                onClick={ () => props.clickHandler() }> 
+
                 <FontAwesomeIcon icon={icons[index]} size="lg"/>
+
                 { key } 
             </Link>
         )
@@ -24,7 +29,7 @@ export const Sidebar = (props) => {
 
 
     return (
-        <div className={ `sidebar ${ props.active ? "active" : "" }` }>
+        <div className={ `sidebar${ props.active ? " active" : "" }` }>
             { elements }
 
             <a href="https://twitter.com/PlayWarframe" key="531ui" className="stickied">

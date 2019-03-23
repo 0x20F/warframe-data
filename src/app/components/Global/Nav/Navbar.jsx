@@ -33,6 +33,13 @@ class Navbar extends Component {
     }
 
 
+    handleSidebarClick = () => {
+        this.setState({
+            sidebarActive: false // This will always hide the sidebar
+        });
+    }
+
+
 
     render() {
         // Build an array of all require links
@@ -65,7 +72,8 @@ class Navbar extends Component {
                         <Sidebar
                             header= { header }
                             active={ active }
-                            elements= { this.links }/>
+                            elements={ this.links }
+                            clickHandler={ this.handleSidebarClick } />
 
                     </React.Fragment> 
                 }
