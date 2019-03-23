@@ -26,15 +26,38 @@
     button {
         position: absolute;
         height: 100%;
-        border: none;
-        opacity: 0.5;
+        width: var(--column-width);
+        opacity: 0.4;
+        cursor: pointer;
+        transition: all $transitionSpeed;
+
+        &, &:focus, &:active {
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+        }
+
+        svg {
+            transition: all $transitionSpeed;
+        }
+
+        &.hidden {
+            opacity: 0;
+        }
 
         &.prev {
             left: 0;
+            &:hover svg {
+                transform: translateX(-5px);
+            }
         }
 
         &.next {
             right: 0;
+            &:hover svg {
+                transform: translateX(5px);
+            }
         }
     }
 
