@@ -5,8 +5,11 @@
     .wrapper {
         width: 100%;
         height: 100%;
-        overflow-x: hidden;
     
         @include flex(flex-start, center);
+
+        @include for-phones-only {
+            height: calc(var(--row-height) * 9);
+        }
     }
 }
