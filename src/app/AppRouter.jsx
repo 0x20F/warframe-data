@@ -21,6 +21,7 @@ class AppRouter extends Component {
 
         this.state = {
             data: gameData,
+            // TODO: Switch this with a viewport dict for more options
             onMobile: window.innerWidth < 600, // TODO: a centralized place for all variables?
             navHeader: "Grid"
         }
@@ -61,6 +62,7 @@ class AppRouter extends Component {
         });
     }
 
+    // TODO: You need context or something to pass themes and settings around
 
     render() {
         return (
