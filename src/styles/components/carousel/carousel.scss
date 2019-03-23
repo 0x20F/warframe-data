@@ -67,10 +67,6 @@
 
     @include for-phones-only {
         grid-row: 4 / calc(var(--row-amount) - 3);
-
-        button {
-            display: none;
-        }
     }
 
     // TODO: Handle very big screens too
