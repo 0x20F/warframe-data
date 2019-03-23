@@ -11,7 +11,7 @@ class Home extends Component {
 
     componentDidMount() {
         // Update the navbar header from here
-        this.props.handleHeader("Grid");
+        this.props.handleHeader("Home");
     }
 
 
