@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Swipe from "react-easy-swipe";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import CarouselSlot from "@Components/Carousel/CarouselSlot";
 import CarouselContainer from "@Components/Carousel/CarouselContainer";
@@ -38,6 +39,9 @@ class Carousel extends Component {
     render() {
         const { children, className, onMobile } = this.props;
         const { currentPosition } = this.state;
+        
+        const atStart = currentPosition == 0;
+        const atEnd = currentPosition == children.length - 1;
 
         return (
             <div className={ className }>
@@ -65,8 +69,19 @@ class Carousel extends Component {
 
                 { !onMobile && // If not on a phone
                     <React.Fragment>
-                        <button className="prev" onClick={() => this.updatePosition(false)}>Prev</button>
-                        <button className="next" onClick={() => this.updatePosition(true)}>Next</button>
+                        <button 
+                            className={`prev${atStart ? " hidden" : ""}`} 
+                            onClick={() => this.updatePosition(false)}>
+
+                            <FontAwesomeIcon icon="chevron-left" size="3x"></FontAwesomeIcon>
+                        </button>
+
+                        <button 
+                            className={`next${atEnd ? " hidden" : ""}`} 
+                            onClick={() => this.updatePosition(true)}>
+
+                            <FontAwesomeIcon icon="chevron-right" size="3x"></FontAwesomeIcon>
+                        </button>
                     </React.Fragment>
                 }
             </div>
