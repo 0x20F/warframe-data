@@ -7,7 +7,9 @@ import ReactDOM     from "react-dom";
 
 // Fontawesome icons
 import { library }  from "@fortawesome/fontawesome-svg-core";
-import { faBookReader, faHome, faChevronRight, faChevronLeft }   from "@fortawesome/free-solid-svg-icons";
+import { faBookReader, faHome, 
+        faChevronRight, faChevronLeft,
+        faCog }   from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 /**
  * Icon sizes:
@@ -20,7 +22,8 @@ library.add(
     faBookReader,
     faTwitter,
     faChevronLeft,
-    faChevronRight); // Maybe twitch instead?
+    faChevronRight,
+    faCog); // TODO: Add settings page
 
 
 
