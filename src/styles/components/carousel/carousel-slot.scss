@@ -26,7 +26,6 @@
         @include flex(center, flex-start);
         font-family: Poppins;
 
-        // TODO: This doesn't look that great
-        box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 6px 60px rgba(0, 0, 0, 0.23);
     }
 }
