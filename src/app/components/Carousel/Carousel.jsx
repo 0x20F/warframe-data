@@ -18,7 +18,6 @@ class Carousel extends Component {
         }
     }
 
-    // TODO: Use this type everywhere instead of binding in constructor
     updatePosition = (next) => {
         // next is boolean... use typescript? 
         // true go next false go prev
