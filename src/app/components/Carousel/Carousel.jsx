@@ -67,23 +67,25 @@ class Carousel extends Component {
                 </Swipe>
 
 
-                { !onMobile && // If not on a phone
-                    <React.Fragment>
-                        <button 
-                            className={`prev${atStart ? " hidden" : ""}`} 
-                            onClick={() => this.updatePosition(false)}>
+                <button 
+                    className={`prev${atStart ? " hidden" : ""}`} 
+                    onClick={() => this.updatePosition(false)}>
 
-                            <FontAwesomeIcon icon="chevron-left" size="3x"></FontAwesomeIcon>
-                        </button>
+                    <FontAwesomeIcon icon="chevron-left" size="3x"></FontAwesomeIcon>
+                </button>
 
-                        <button 
-                            className={`next${atEnd ? " hidden" : ""}`} 
-                            onClick={() => this.updatePosition(true)}>
-
-                            <FontAwesomeIcon icon="chevron-right" size="3x"></FontAwesomeIcon>
-                        </button>
-                    </React.Fragment>
+                {
+                    onMobile &&
+                    <p className="info">swipe or tap buttons</p>
                 }
+
+                <button 
+                    className={`next${atEnd ? " hidden" : ""}`} 
+                    onClick={() => this.updatePosition(true)}>
+
+                    <FontAwesomeIcon icon="chevron-right" size="3x"></FontAwesomeIcon>
+                </button>
+            
             </div>
         );
     }
