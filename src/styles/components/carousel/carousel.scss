@@ -66,7 +66,34 @@
     }
 
     @include for-phones-only {
-        grid-row: 4 / calc(var(--row-amount) - 3);
+        grid-row: 4 / calc(var(--row-amount));
+
+        button {
+            height: var(--row-height);
+            bottom: var(--row-height);
+            width: calc(var(--column-width) * 2);
+            &.prev {
+                left: var(--column-width);
+            }
+            &.next {
+                right: var(--column-width);
+            }
+        }
+
+        .info {
+            position: absolute;
+            bottom: var(--row-height);
+            left: 50%;
+            transform: translateX(-50%);
+            height: var(--row-height);
+            width: calc(var(--column-width) * 2);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            @include flex(center, center);
+            font-family: Poppins;
+            opacity: 0.4;
+        }
     }
 
     // TODO: Handle very big screens too
