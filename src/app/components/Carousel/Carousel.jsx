@@ -36,12 +36,12 @@ class Carousel extends Component {
     }
 
     render() {
-        const { children, className, onMobile } = this.props;
+        const { children, className, viewport } = this.props;
         const { currentPosition } = this.state;
         
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
-        const iconSize = onMobile ? "2x" : "3x";
+        const iconSize = viewport.mobile ? "2x" : "3x";
 
         return (
             <div className={ className }>
@@ -75,7 +75,7 @@ class Carousel extends Component {
                 </button>
 
                 {
-                    onMobile &&
+                    viewport.mobile &&
                     <p className="info">swipe or tap buttons</p>
                 }
 

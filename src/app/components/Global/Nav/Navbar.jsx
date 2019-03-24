@@ -52,7 +52,7 @@ class Navbar extends Component {
 
         // Have easier access to the state variable
         const active    = this.state.sidebarActive;
-        const mobile    = this.props.onMobile;
+        const mobile    = this.props.viewport.mobile;
 
 
         return (

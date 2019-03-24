@@ -22,7 +22,7 @@ class Home extends Component {
             
                 <Carousel 
                     className="home-carousel"
-                    onMobile={this.props.onMobile}>
+                    viewport={this.props.viewport}>
 
                     <div>Item 1</div>
                     <div>Item 2</div>
