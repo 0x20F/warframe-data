@@ -13,7 +13,8 @@ class Navbar extends Component {
 
         this.links = { // Update this later on I guess
             home: "/",
-            news: "/news"
+            news: "/news",
+            settings: "/settings"
         };
 
         this.state = {

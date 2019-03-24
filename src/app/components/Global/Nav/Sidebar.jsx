@@ -9,7 +9,7 @@ export const Sidebar = (props) => {
     
     const header = props.header;
     const links = props.elements;
-    const icons = ["home", "book-reader"]; // Should be the length of links
+    const icons = ["home", "book-reader", "cog"]; // Should be the length of links
 
     const elements = Object.keys(links).map((key, index) => {
         if(header === key) return;
@@ -36,6 +36,7 @@ export const Sidebar = (props) => {
                 <FontAwesomeIcon icon={["fab", "twitter"]} size="lg"/>
                 Twitter
             </a>
+            
         </div>
     );
 };
