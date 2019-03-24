@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Sidebar } from "@Components/Global/Nav/Sidebar";
 
@@ -12,9 +13,9 @@ class Navbar extends Component {
         super();
 
         this.links = { // Update this later on I guess
-            home: "/",
-            news: "/news",
-            settings: "/settings"
+            home    : { to: "/", icon: "home" },
+            news    : { to: "/news", icon: "book-reader" },
+            settings: { to: "/settings", icon: "cog" }
         };
 
         this.state = {
@@ -43,17 +44,26 @@ class Navbar extends Component {
 
 
     render() {
-        // Build an array of all require links
+        // Build an array of all required links
         const header    = this.props.header.toLowerCase();
+        const { viewport, active } = this.props;
+        const mobile = viewport.mobile;
+
         const elements  = Object.keys(this.links).map((key, index) => {
             if(key === header) return; // If the key is the current page, pass
 
-            return <Link to={this.links[key]} key={index}> {key} </Link>
-        });
+            return ( 
+                <Link 
+                    to={ this.links[key].to } 
+                    key={ index }
+                    onClick={ this.handleSidebarClick }>
 
-        // Have easier access to the state variable
-        const active    = this.state.sidebarActive;
-        const mobile    = this.props.viewport.mobile;
+                    <FontAwesomeIcon icon={this.links[key].icon} size="lg" />
+
+                    { mobile && key }
+                </Link>
+            );
+        });
 
 
         return (
@@ -71,10 +81,8 @@ class Navbar extends Component {
                         </div>
 
                         <Sidebar
-                            header= { header }
                             active={ active }
-                            elements={ this.links }
-                            clickHandler={ this.handleSidebarClick } />
+                            elements={ elements }/>
 
                     </React.Fragment> 
                 }
