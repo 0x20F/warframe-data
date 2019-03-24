@@ -51,6 +51,8 @@ class AppRouter extends Component {
         window.removeEventListener("resize", this.updateWidth);
     }
 
+    // Build a dict that tells children what viewport they're in
+    // so that apporpriate elements can be displayed
     prepareViewports() {
         const keys = ["mobile", "tablet", "desktop", "desktopPlus"];
         const sizes = [600, 900, 1200, 1800];
@@ -92,8 +94,7 @@ class AppRouter extends Component {
                     <DevInfo/>
                     <GridBackground />
                     <Navbar 
-                        header={this.state.navHeader} 
-                        handleHeader={this.handleHeader}
+                        header={this.state.navHeader}
                         viewport={this.state.viewport}/>
 
                     <Route 
