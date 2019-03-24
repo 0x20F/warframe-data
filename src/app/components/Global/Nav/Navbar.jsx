@@ -46,8 +46,9 @@ class Navbar extends Component {
     render() {
         // Build an array of all required links
         const header    = this.props.header.toLowerCase();
-        const { viewport, active } = this.props;
+        const { viewport } = this.props;
         const mobile = viewport.mobile;
+        const active = this.state.sidebarActive;
 
         const elements  = Object.keys(this.links).map((key, index) => {
             if(key === header) return; // If the key is the current page, pass
