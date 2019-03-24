@@ -7,9 +7,9 @@ import ReactDOM     from "react-dom";
 
 // Fontawesome icons
 import { library }  from "@fortawesome/fontawesome-svg-core";
-import { faBookReader, faHome, 
+import { faHome, 
         faChevronRight, faChevronLeft,
-        faCog }   from "@fortawesome/free-solid-svg-icons";
+        faCog, faRss}   from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 /**
  * Icon sizes:
@@ -19,7 +19,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
  */
 library.add(
     faHome,
-    faBookReader,
+    faRss,
     faTwitter,
     faChevronLeft,
     faChevronRight,

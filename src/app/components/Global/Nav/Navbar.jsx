@@ -14,7 +14,7 @@ class Navbar extends Component {
 
         this.links = { // Update this later on I guess
             home    : { to: "/", icon: "home" },
-            news    : { to: "/news", icon: "book-reader" },
+            news    : { to: "/news", icon: "rss" },
             settings: { to: "/settings", icon: "cog" }
         };
 
