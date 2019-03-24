@@ -93,6 +93,11 @@ nav {
     @include for-tablet-only {
         grid-row: 2;
 
+        header {
+            grid-row: 1 / 3;
+            font-size: calc(var(--row-height) * 2);
+        }
+
         .quick-nav {
             @include flex(flex-start, center);
 
