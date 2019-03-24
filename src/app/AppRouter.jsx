@@ -14,6 +14,8 @@ import DevInfo from "@Dev/DevInfo";
 
 
 
+
+
 class AppRouter extends Component {
 
     constructor() {
@@ -21,8 +23,7 @@ class AppRouter extends Component {
 
         this.state = {
             data: gameData,
-            // TODO: Switch this with a viewport dict for more options
-            onMobile: window.innerWidth < 600, // TODO: a centralized place for all variables?
+            viewport: this.prepareViewports(),
             navHeader: "Grid"
         }
         
@@ -50,9 +51,28 @@ class AppRouter extends Component {
         window.removeEventListener("resize", this.updateWidth);
     }
 
+    prepareViewports() {
+        const keys = ["mobile", "tablet", "desktop", "desktopPlus"];
+        const sizes = [600, 900, 1200, 1800];
+        
+        let done = false;
+        let result = {};
+
+        keys.forEach((key, i) => {
+            if(window.innerWidth < sizes[i] && !done) {
+                result[key] = true;
+                done = true;
+            } else {
+                result[key] = false;
+            }
+        });
+
+        return result;
+    }
+
     updateWidth = () => {
         this.setState({
-            onMobile: window.innerWidth < 600
+            viewport: this.prepareViewports()
         })
     }
 
@@ -74,7 +94,7 @@ class AppRouter extends Component {
                     <Navbar 
                         header={this.state.navHeader} 
                         handleHeader={this.handleHeader}
-                        onMobile={this.state.onMobile}/>
+                        viewport={this.state.viewport}/>
 
                     <Route 
                         path="/" 
@@ -82,7 +102,7 @@ class AppRouter extends Component {
                         render={ 
                             () => <Home 
                                     handleHeader={this.handleHeader}
-                                    onMobile={this.state.onMobile}/> 
+                                    viewport={this.state.viewport}/> 
                         } />
 
                     <Route 
@@ -90,7 +110,7 @@ class AppRouter extends Component {
                         render={ 
                             () => <News 
                                     handleHeader={this.handleHeader}
-                                    onMobile={this.state.onMobile}/> 
+                                    viewport={this.state.viewport}/> 
                         } />
                     
                 </React.Fragment>
