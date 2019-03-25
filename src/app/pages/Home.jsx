@@ -24,14 +24,21 @@ class Home extends Component {
                     className="home-carousel"
                     viewport={this.props.viewport}>
 
-                    <div>Item 1</div>
-                    <div>Item 2</div>
-                    <div>Item 3</div>
-                    <div>Item 4</div>
-                    <div>Item 5</div>
-                    <div>Item 6</div>
-                    <div>Item 7</div>
-                    <div>Item 8</div>
+                    <div className="home-component alerts">
+                        <header>
+                            <span className="title">Nightwave</span>
+                            <span className="sort">
+                                <span className="bubble"> daily</span>
+                                <span className="bubble"> weekly</span>
+                                <span className="bubble"> elite</span>
+                            </span>
+                        </header>
+                    </div>
+
+
+
+
+                    <div>Item 2></div>
                     
                 </Carousel>
 
