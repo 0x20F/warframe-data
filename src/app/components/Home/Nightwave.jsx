@@ -9,19 +9,28 @@ class Nightwave extends Component {
         super();
 
         this.state = {
-            filter: "weekly"
+            filter: "none"
         };
     }
 
     setFilter = (filter) => {
-        this.setState({
-            filter: filter
+        this.setState(state => {
+            if(filter === state.filter) {
+                return {
+                    filter: "none"
+                }
+            }
+
+            return {
+                filter: filter
+            }
         })
     };
 
     render() {
 
         const { data, className } = this.props;
+        const { filter } = this.state;
         const challenges = data.activeChallenges.map((item, index) => {
 
             switch(this.state.filter) {
@@ -44,15 +53,30 @@ class Nightwave extends Component {
             )
         });
 
+
         return (
             <div className={`nightwave ${className}`}>
         
                 <header>
                     <span className="title">Nightwave</span>
                     <span className="sort">
-                        <span className="bubble" onClick={ () => this.setFilter("daily") }>daily</span>
-                        <span className="bubble" onClick={ () => this.setFilter("weekly") }>weekly</span>
-                        <span className="bubble" onClick={ () => this.setFilter("elite") }>elite</span>
+                        <button 
+                            className={`bubble${filter === "daily" ? " active" : ""}`} 
+                            onClick={ () => this.setFilter("daily") }>
+                            daily
+                        </button>
+
+                        <button 
+                            className={`bubble${filter === "weekly" ? " active" : ""}`}
+                            onClick={ () => this.setFilter("weekly") }>
+                            weekly
+                        </button>
+                        
+                        <button 
+                            className={`bubble${filter === "elite" ? " active" : ""}`}
+                            onClick={ () => this.setFilter("elite") }>
+                            elite
+                        </button>
                     </span>
                 </header>
 
