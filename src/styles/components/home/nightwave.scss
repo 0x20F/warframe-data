@@ -1,0 +1,78 @@
+@import "@Styles/base/fonts";
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+.nightwave {
+    header {
+        //border-bottom: 4px dotted #31425f;
+        height: 20%;
+        width: 100%;
+        padding: 10px 0;
+        @include flex(center, center, column);
+
+        .title {
+            font-size: 34px;
+            color: #ccd9f0;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .sort {
+            width: 100%;
+            font-size: 15px;
+            color: #58677a;
+            overflow: hidden;
+            border-radius: 40px;
+            @include flex(space-between, center);
+
+            .bubble:nth-child(2) {
+                border-left: 1px solid rgba(88, 103, 122, 0.2);
+                border-right: 1px solid rgba(88, 103, 122, 0.2);
+            }
+
+            .bubble {
+                font-family: Poppins;
+                background-color: #2f3a4e;
+                padding: 5px;
+                text-align: center;
+                width: 33.333%;
+                display: inline-block;
+                transition: all .5s;
+                cursor: pointer;
+
+                &:hover {
+                    color: #307ece;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 80%;
+        margin-top: 20px;
+        overflow: hidden; // hide the scrollbar
+
+        & > div {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            padding-right: 37px;
+            box-sizing: content-box;
+
+            .challenge {
+                width: 100%;
+                height: auto;
+                padding: 20px 0 20px 8px;
+                overflow: hidden;
+                text-align: center;
+
+                &:last-child {
+                    padding-bottom: 200px;
+                }
+            }
+        }
+    }
+
+}
