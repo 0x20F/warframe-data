@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Carousel from "@Components/Carousel/Carousel";
+import Nightwave from "@Components/Home/Nightwave";
 
 import "@Styles/pages/home";
 
@@ -17,29 +18,24 @@ class Home extends Component {
 
     render() {
 
+        const { nightwave } = this.props.data;
+
         return (
             <React.Fragment>
-            
-                <Carousel 
+
+                <Carousel
                     className="home-carousel"
                     viewport={this.props.viewport}>
 
-                    <div className="home-component alerts">
-                        <header>
-                            <span className="title">Nightwave</span>
-                            <span className="sort">
-                                <span className="bubble"> daily</span>
-                                <span className="bubble"> weekly</span>
-                                <span className="bubble"> elite</span>
-                            </span>
-                        </header>
-                    </div>
 
+                    <Nightwave 
+                        className="home-component" 
+                        data={ nightwave }/>
 
 
 
                     <div>Item 2></div>
-                    
+
                 </Carousel>
 
             </React.Fragment>
