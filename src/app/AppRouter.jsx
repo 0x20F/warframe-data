@@ -103,7 +103,8 @@ class AppRouter extends Component {
                         render={ 
                             () => <Home 
                                     handleHeader={this.handleHeader}
-                                    viewport={this.state.viewport}/> 
+                                    viewport={this.state.viewport}
+                                    data={ this.state.data }/> 
                         } />
 
                     <Route 
