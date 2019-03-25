@@ -23,7 +23,7 @@
         height: 100%;
     }
 
-    button {
+    & > button {
         position: absolute;
         height: 100%;
         width: var(--column-width);
