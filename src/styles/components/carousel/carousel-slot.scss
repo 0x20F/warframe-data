@@ -21,7 +21,8 @@
         height: 100%;
 
         background-color: #7289da;
-        border-radius: 10px;
+        border-radius: 20px;
+        overflow: hidden;
 
         @include flex(center, flex-start);
         font-family: Poppins;
