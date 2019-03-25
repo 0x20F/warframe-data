@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Sidebar } from "@Components/Global/Nav/Sidebar";
 
-import "@Styles/components/navbar";
+import "@Styles/components/global/navbar";
 
 
 class Navbar extends Component {

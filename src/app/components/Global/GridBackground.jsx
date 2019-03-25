@@ -1,6 +1,6 @@
 import React from "react";
 
-import "@Styles/components/gridbackground";
+import "@Styles/components/global/gridbackground";
 
 
 
