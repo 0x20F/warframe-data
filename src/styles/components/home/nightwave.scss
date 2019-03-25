@@ -20,7 +20,6 @@
         .sort {
             width: 100%;
             font-size: 15px;
-            color: #58677a;
             overflow: hidden;
             border-radius: 40px;
             @include flex(space-between, center);
@@ -33,14 +32,16 @@
             .bubble {
                 font-family: Poppins;
                 background-color: #2f3a4e;
+                color: #58677a;
                 padding: 5px;
                 text-align: center;
                 width: 33.333%;
                 display: inline-block;
                 transition: all .5s;
                 cursor: pointer;
+                border: none;
 
-                &:hover {
+                &:hover, &.active {
                     color: #307ece;
                     background-color: #fff;
                 }
@@ -64,7 +65,7 @@
             .challenge {
                 width: 100%;
                 height: auto;
-                padding: 20px 0 20px 8px;
+                padding: 20px 0 20px 0px;
                 overflow: hidden;
                 text-align: center;
 
