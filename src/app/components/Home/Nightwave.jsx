@@ -45,10 +45,16 @@ class Nightwave extends Component {
                     break;
             }
 
+            /**
+             * Some titles show up in descriptions aswell
+             * prevent that.
+             */
+            const result = item.desc.includes(item.title);
+
             return (
                 <div className="challenge" key={index}>
                     <div className="title">{item.title}</div>
-                    <div className="description">{item.desc}</div>
+                    { !result && <div className="description">{item.desc}</div> }
                 </div>
             )
         });
