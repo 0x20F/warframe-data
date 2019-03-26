@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Challenge from "@Components/Home/Nightwave/Challenge";
+
 import "@Styles/components/home/nightwave";
 
 
@@ -45,17 +47,10 @@ class Nightwave extends Component {
                     break;
             }
 
-            /**
-             * Some titles show up in descriptions aswell
-             * prevent that.
-             */
-            const result = item.desc.includes(item.title);
-
             return (
-                <div className="challenge" key={index}>
-                    <div className="title">{item.title}</div>
-                    { !result && <div className="description">{item.desc}</div> }
-                </div>
+                <Challenge 
+                    key={ index }
+                    itemData={ item } />
             )
         });
 
