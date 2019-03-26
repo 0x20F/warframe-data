@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Carousel from "@Components/Carousel/Carousel";
-import Nightwave from "@Components/Home/Nightwave";
+import Nightwave from "@Components/Home/Nightwave/Nightwave";
 
 import "@Styles/pages/home";
 
