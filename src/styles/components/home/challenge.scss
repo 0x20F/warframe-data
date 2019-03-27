@@ -3,7 +3,7 @@
 @import "@Styles/base/fonts";
 
 .challenge {
-    width: calc(100% + 17px); // random pixel value
+    width: 100%;
     height: auto;
     min-height: 100px;
     padding: 20px 0 10px 0px;
@@ -36,13 +36,38 @@
         flex-wrap: wrap;
 
         & > div {
-            width: 40%;
+            width: 30%;
             height: 40px;
             @include flex(center, center);
             margin: 30px 0 25px 0;
             border-radius: 40px;
+            color: transparent;
+            border: 2px solid transparent;
+
+            &.rep {
+                border: none;
+            }
+        }
+    }
+
+    &.daily {
+        .challenge-info > div {
+            color: #30c9ce;
+            border-color: #30c9ce;
+        }
+    }
+
+    &.weekly {
+        .challenge-info > div {
             color: #307ece;
-            border: 2px solid #307ece;
+            border-color: #307ece;
+        }
+    }
+
+    &.elite {
+        .challenge-info > div {
+            color: #f06718;
+            border-color: #f06718;
         }
     }
 }
