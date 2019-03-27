@@ -55,7 +55,7 @@
         overflow: hidden; // hide the scrollbar
 
         & > div {
-            width: 100%;
+            width: calc(100% + 17px);
             height: 100%;
             overflow-y: scroll;
             padding-right: 37px;
