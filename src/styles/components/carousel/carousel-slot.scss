@@ -17,6 +17,7 @@
     .carousel-slot {
         flex: 1 0 100%;
         flex-basis: var(--slot-basis);
+        max-width: 400px;
         margin-left: var(--slot-margin);
         height: 100%;
 
