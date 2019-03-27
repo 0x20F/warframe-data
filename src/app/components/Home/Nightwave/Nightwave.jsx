@@ -29,6 +29,17 @@ class Nightwave extends Component {
         })
     };
 
+    challengeRarity = (challenge) => {
+        if(challenge.isDaily) 
+            return "daily";
+        
+        if(challenge.isElite) 
+            return "elite";
+
+        if(!challenge.isDaily || !challenge.isElite) 
+            return "weekly";
+    }
+
     render() {
 
         const { data, className } = this.props;
@@ -47,10 +58,13 @@ class Nightwave extends Component {
                     break;
             }
 
+            let cls = this.challengeRarity(item);
+
             return (
                 <Challenge 
                     key={ index }
-                    itemData={ item } />
+                    itemData={ item } 
+                    rarity={ cls }/>
             )
         });
 
