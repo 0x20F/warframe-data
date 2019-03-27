@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "@Styles/components/home/challenge";
+
 
 class Challenge extends Component {
 
