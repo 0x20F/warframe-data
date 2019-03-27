@@ -10,7 +10,8 @@ class Challenge extends Component {
 
         this.state = {
             data: this.props.itemData,
-            time: this.calculateTime(this.props.itemData)
+            time: this.calculateTime(this.props.itemData),
+            rarity: this.props.rarity
         }
     }
 
@@ -43,7 +44,6 @@ class Challenge extends Component {
         const expiry = new Date(itemData.expiry).getTime();
         const now = new Date().getTime();
         const distance = expiry - now;
-
         let key = Object.keys(dateInfo).find(key => dateInfo[key] <= distance);
 
         return `${Math.floor(distance / dateInfo[key]) || "expired"}${key || ""}`;
@@ -52,19 +52,19 @@ class Challenge extends Component {
 
     render() {
 
-        const { data, time } = this.state;
+        const { data, time, rarity } = this.state;
         const result = data.desc.includes(data.title); // If title and description are similar only add title
 
         return (
-            <div className="challenge">
+            <div className={`challenge ${ rarity }`}>
 
                 <div className="title">{ data.title }</div>
 
                 { !result && <div className="description">{ data.desc }</div> }
 
                 <div className="challenge-info">
-                    <div className="rep">{ data.reputation } rep</div>
-                    <div className="time-left">{ time }</div>
+                    <div className={ `rep ${ rarity }` }>{ data.reputation } rep</div>
+                    <div className={`time-left ${ rarity }`}>{ time }</div>
                 </div>
 
             </div>
