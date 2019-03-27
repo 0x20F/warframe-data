@@ -60,51 +60,6 @@
             overflow-y: scroll;
             padding-right: 37px;
             box-sizing: content-box;
-
-            .challenge {
-                width: calc(100% + 17px); // random pixel value
-                height: auto;
-                min-height: 100px;
-                padding: 20px 0 10px 0px;
-                margin: 40px 0 20px 0;
-                overflow: hidden;
-                text-align: left;
-                font-family: Poppins;
-                font-size: 15px;
-                border-bottom: 3px dotted #2f3a4e;
-                @include flex(center, space-between, column);
-
-                &:last-child {
-                    padding-bottom: 200px;
-                }
-
-                .title {
-                    color: #58677a;
-                    text-align: center;
-                }
-
-                .description {
-                    color: rgba(88, 103, 122, 0.698);
-                    text-align: center;
-                    font-size: 85%;
-                }
-
-                .challenge-info {
-                    width: 100%;
-                    @include flex(space-evenly, center, row);
-                    flex-wrap: wrap;
-
-                    & > div {
-                        width: 40%;
-                        height: 40px;
-                        @include flex(center, center);
-                        margin: 30px 0 25px 0;
-                        border-radius: 40px;
-                        color: #307ece;
-                        border: 2px solid #307ece;
-                    }
-                }
-            }
         }
     }
 
