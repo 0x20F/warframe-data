@@ -21,9 +21,8 @@
         margin-left: var(--slot-margin);
         height: 100%;
 
-        background-color: #7289da;
+        background-color: transparent;
         border-radius: 20px;
-        overflow: hidden;
 
         @include flex(center, flex-start);
         font-family: Poppins;
