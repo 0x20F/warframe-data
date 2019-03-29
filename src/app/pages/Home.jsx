@@ -29,7 +29,7 @@ class Home extends Component {
 
 
                     <Nightwave 
-                        className="home-component" 
+                        className="home-component shadow" 
                         data={ nightwave }/>
 
 
