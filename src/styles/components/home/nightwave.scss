@@ -2,6 +2,10 @@
 @import "@Styles/utils/variables";
 
 .nightwave {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+
     header {
         //border-bottom: 4px dotted #31425f;
         height: 20%;
