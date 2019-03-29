@@ -1,5 +1,6 @@
 @import "@Styles/utils/mixins";
 @import "@Styles/utils/variables";
+@import "@Styles/base/fonts";
 
 html {
     width: 100%;
@@ -28,5 +29,9 @@ body {
         overflow: hidden;
 
         z-index: 2;
+    }
+
+    .shadow {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 6px 60px rgba(0, 0, 0, 0.23);
     }
 }
