@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Carousel from "@Components/Carousel/Carousel";
 import Nightwave from "@Components/Home/Nightwave/Nightwave";
+import QuickInfo from "@Components/Home/QuickInfo/QuickInfo";
 
 import "@Styles/pages/home";
 
@@ -32,9 +33,9 @@ class Home extends Component {
                         className="home-component shadow" 
                         data={ nightwave }/>
 
+                    <QuickInfo />
 
 
-                    <div>Item 2></div>
 
                 </Carousel>
 
