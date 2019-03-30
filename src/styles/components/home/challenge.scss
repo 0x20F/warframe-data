@@ -69,4 +69,15 @@
             border-color: #f06718;
         }
     }
+
+
+    @include for-phones-only {
+        width: calc(100% - 17px);
+
+        .challenge-info {
+            & > div {
+                font-size: 13px;
+            }
+        }
+    }
 }

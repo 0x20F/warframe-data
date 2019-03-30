@@ -17,7 +17,8 @@ class Carousel extends Component {
 
         this.state = {
             currentPosition: 0,
-            showIndicator: this.props.showIndicator
+            showIndicator: this.props.showIndicator,
+            isAnimated: this.props.shouldAnimate
         }
     }
 
@@ -38,7 +39,7 @@ class Carousel extends Component {
     }
 
 
-    
+
     render() {
         const { children, className, viewport } = this.props;
         const { currentPosition, showIndicator } = this.state;
