@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CarouselSlot from "@Components/Carousel/CarouselSlot";
 import CarouselContainer from "@Components/Carousel/CarouselContainer";
 import Wrapper from "@Components/Carousel/Wrapper";
+import Indicator from "@Components/Carousel/Indicator/Indicator";
 
 import "@Styles/components/carousel/carousel";
 
@@ -42,6 +43,7 @@ class Carousel extends Component {
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
         const iconSize = viewport.mobile ? "2x" : "3x";
+        const itemCount = children.length;
 
         return (
             <div className={ className }>
@@ -66,6 +68,12 @@ class Carousel extends Component {
 
                 </Swipe>
 
+                <Indicator
+                    radius="20"
+                    stroke="4"
+                    progress="50"
+                    itemCount={ itemCount }
+                    active={ currentPosition }/>
 
                 <button 
                     className={`prev${atStart ? " hidden" : ""}`} 
