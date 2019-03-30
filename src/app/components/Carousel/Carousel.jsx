@@ -12,17 +12,18 @@ import "@Styles/components/carousel/carousel";
 
 class Carousel extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
-            currentPosition: 0
+            currentPosition: 0,
+            showIndicator: this.props.showIndicator
         }
     }
 
-    updatePosition = (next) => {
-        // next is boolean... use typescript? 
-        // true go next false go prev
 
+
+    updatePosition = (next) => {
         const { children } = this.props;
         const position = this.state.currentPosition;
 
@@ -36,9 +37,11 @@ class Carousel extends Component {
         }
     }
 
+
+    
     render() {
         const { children, className, viewport } = this.props;
-        const { currentPosition } = this.state;
+        const { currentPosition, showIndicator } = this.state;
         
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
@@ -68,12 +71,15 @@ class Carousel extends Component {
 
                 </Swipe>
 
-                <Indicator
-                    radius="20"
-                    stroke="4"
-                    progress="50"
-                    itemCount={ itemCount }
-                    active={ currentPosition }/>
+                {
+                    showIndicator &&
+                    <Indicator
+                        radius="20"
+                        stroke="4"
+                        progress="50"
+                        itemCount={ itemCount }
+                        active={ currentPosition }/>
+                }
 
                 <button 
                     className={`prev${atStart ? " hidden" : ""}`} 
