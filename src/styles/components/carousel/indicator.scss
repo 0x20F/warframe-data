@@ -1,0 +1,11 @@
+@import "@Styles/utils/mixins";
+@import "@Styles/utils/variables";
+
+.indicator {
+    @include flex(center, center);
+
+    .item-indicator {
+        position: relative;
+        background-color: green;
+    }
+}
