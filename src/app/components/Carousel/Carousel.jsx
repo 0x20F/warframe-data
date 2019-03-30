@@ -18,8 +18,24 @@ class Carousel extends Component {
         this.state = {
             currentPosition: 0,
             showIndicator: this.props.showIndicator,
-            isAnimated: this.props.shouldAnimate
+            isAnimated: this.props.shouldAnimate,
+            // true = to right, false = to left
+            animationDirection: true, 
+            animationProgress: 0, // TODO: count progress somehow
+            animationSpeed: 1000
         }
+    }
+
+    componentDidMount() {
+        if(!this.state.isAnimated) return;
+
+        this.animationInterval = setInterval(() => {
+            this.updatePosition(this.state.animationDirection);
+        }, this.state.animationSpeed);    
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.animationInterval);
     }
 
 
@@ -30,10 +46,15 @@ class Carousel extends Component {
 
         const total = children.length;
         const moveTo = next ? position + 1 : position - 1;
+        
+        let animationDirection = 
+            moveTo === total - 1 ? false :
+            moveTo === 0 ? true : this.state.animationDirection;
 
         if(moveTo < total && moveTo >= 0) {
             this.setState({
-                currentPosition: moveTo
+                currentPosition: moveTo,
+                animationDirection
             });
         }
     }
@@ -42,7 +63,7 @@ class Carousel extends Component {
 
     render() {
         const { children, className, viewport } = this.props;
-        const { currentPosition, showIndicator } = this.state;
+        const { currentPosition, showIndicator, animationProgress } = this.state;
         
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
@@ -58,7 +79,8 @@ class Carousel extends Component {
                     onSwipeRight={() => this.updatePosition(false)}>
                 
                     <Wrapper>
-                        <CarouselContainer position={ currentPosition }>
+                        <CarouselContainer 
+                            position={ currentPosition }>
 
                             { children.map((child, index) => (
                                 <CarouselSlot 
@@ -77,7 +99,7 @@ class Carousel extends Component {
                     <Indicator
                         radius="20"
                         stroke="4"
-                        progress="50"
+                        progress={ animationProgress }
                         itemCount={ itemCount }
                         active={ currentPosition }/>
                 }
