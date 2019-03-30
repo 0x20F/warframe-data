@@ -9,11 +9,16 @@ class Indicator extends Component {
     constructor() {
         super();
 
-        this.times = (n, f) => { while(n --> 0) f(n); };
+        this.times = (n, f) => { 
+            let index = 0;
+            do {
+                f(index);
+            } while(++index < n);
+        };
     }
 
     render() {
-        const { itemCount, radius, stroke, progress } = this.props;
+        const { itemCount, active, radius, stroke, progress } = this.props;
         const elements = [];
         this.times(itemCount, (index) => {
             elements.push(
@@ -22,6 +27,7 @@ class Indicator extends Component {
                     key={ index }>
 
                     <Ring 
+                        className={index === active ? "active" : ""}
                         radius={ radius }
                         stroke={ stroke }
                         progress={ progress }/>
