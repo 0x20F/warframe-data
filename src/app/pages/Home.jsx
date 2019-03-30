@@ -26,7 +26,7 @@ class Home extends Component {
 
                 <Carousel
                     className="home-carousel"
-                    viewport={this.props.viewport}>
+                    viewport={ this.props.viewport }>
 
 
                     <Nightwave 
