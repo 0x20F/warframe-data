@@ -28,3 +28,14 @@
         font-family: Poppins;
     }
 }
+
+.cycles-carousel {
+    .carousel-slot {
+        flex: 1 0 100%;
+        flex-basis: 100%;
+        width: 100%;
+        @include flex(center, center);
+        background-color: red;
+        margin-left: 0;
+    }
+}
