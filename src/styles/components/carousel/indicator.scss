@@ -6,14 +6,19 @@
 
     .item-indicator {
 
+        @include flex(center, center);
+
         svg {
             circle {
                 transition: all $transitionSpeed;
                 stroke: transparent;
-                fill: green;
 
                 &.active {
-                    stroke: blue;
+                    // Override in needed element down below
+                }
+
+                &:hover {
+                    // Override in needed element down below
                 }
             }
         }
@@ -21,15 +26,7 @@
 }
 
 .home-carousel {
-    .indicator {
-        // TODO: Temporary styles, home carousel won't have this.
-        height: auto;
-        width: calc(var(--column-width) * 4);
-        position: absolute;
-
-        bottom: calc(var(--row-height) * -1); // One row under the carousel
-        left: calc(var(--column-width)); // 2 columns from the left
-
-        @include flex(center, center);
+    .quick-info .cycles {
+        // 
     }
 }
