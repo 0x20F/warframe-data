@@ -17,12 +17,12 @@ class Carousel extends Component {
 
         this.state = {
             currentPosition: 0,
-            showIndicator: this.props.showIndicator,
+            indicatorEnabled: this.props.showIndicator,
+            buttonsEnabled: this.props.showButtons,
             isAnimated: this.props.shouldAnimate,
             // true = to right, false = to left
-            animationDirection: true, 
-            animationProgress: 0, // TODO: count progress somehow
-            animationSpeed: 1000
+            animationDirection: true,
+            animationSpeed: this.props.animationSpeed ? this.props.animationSpeed : 2000
         }
     }
 
@@ -31,14 +31,16 @@ class Carousel extends Component {
 
         this.animationInterval = setInterval(() => {
             this.updatePosition(this.state.animationDirection);
+
         }, this.state.animationSpeed);    
     }
 
     componentWillUnmount() {
         clearInterval(this.animationInterval);
+        clearInterval(this.progressInterval);
     }
 
-
+    
 
     updatePosition = (next) => {
         const { children } = this.props;
@@ -63,12 +65,14 @@ class Carousel extends Component {
 
     render() {
         const { children, className, viewport } = this.props;
-        const { currentPosition, showIndicator, animationProgress } = this.state;
+        const { currentPosition, indicatorEnabled, buttonsEnabled } = this.state;
         
         const atStart = currentPosition == 0;
         const atEnd = currentPosition == children.length - 1;
-        const iconSize = viewport.mobile ? "2x" : "3x";
+        const iconSize = viewport.mobile ? "2x" : "3x"; // This might be bad to need everywhere later
         const itemCount = children.length;
+
+
 
         return (
             <div className={ className }>
@@ -95,33 +99,39 @@ class Carousel extends Component {
                 </Swipe>
 
                 {
-                    showIndicator &&
+                    indicatorEnabled &&
                     <Indicator
-                        radius="20"
-                        stroke="4"
-                        progress={ animationProgress }
+                        radius="10"
+                        stroke="2"
                         itemCount={ itemCount }
                         active={ currentPosition }/>
                 }
 
-                <button 
-                    className={`prev${atStart ? " hidden" : ""}`} 
-                    onClick={() => this.updatePosition(false)}>
-
-                    <FontAwesomeIcon icon="chevron-left" size={iconSize}></FontAwesomeIcon>
-                </button>
 
                 {
                     viewport.mobile &&
                     <p className="info">swipe or tap buttons</p>
                 }
 
-                <button 
-                    className={`next${atEnd ? " hidden" : ""}`} 
-                    onClick={() => this.updatePosition(true)}>
 
-                    <FontAwesomeIcon icon="chevron-right" size={iconSize}></FontAwesomeIcon>
-                </button>
+                {
+                    buttonsEnabled &&
+                    <React.Fragment>
+                        <button 
+                            className={`prev${atStart ? " hidden" : ""}`} 
+                            onClick={() => this.updatePosition(false)}>
+
+                            <FontAwesomeIcon icon="chevron-left" size={iconSize}></FontAwesomeIcon>
+                        </button>
+
+                        <button 
+                            className={`next${atEnd ? " hidden" : ""}`} 
+                            onClick={() => this.updatePosition(true)}>
+
+                            <FontAwesomeIcon icon="chevron-right" size={iconSize}></FontAwesomeIcon>
+                        </button>
+                    </React.Fragment>
+                }
             
             </div>
         );
