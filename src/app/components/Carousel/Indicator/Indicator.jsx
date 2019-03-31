@@ -17,8 +17,9 @@ class Indicator extends Component {
         };
     }
 
+    
     render() {
-        const { itemCount, active, radius, stroke, progress } = this.props;
+        const { itemCount, active, radius, stroke } = this.props;
         const elements = [];
         this.times(itemCount, (index) => {
             elements.push(
@@ -26,11 +27,11 @@ class Indicator extends Component {
                     className="item-indicator" 
                     key={ index }>
 
+                    { /** TODO: This should be clickable */}
                     <Ring 
                         className={index === active ? "active" : ""}
                         radius={ radius }
-                        stroke={ stroke }
-                        progress={ progress }/>
+                        stroke={ stroke }/>
                 </div>
             );
         });
