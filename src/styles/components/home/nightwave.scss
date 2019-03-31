@@ -2,15 +2,17 @@
 @import "@Styles/utils/variables";
 
 .nightwave {
+    height: 100%;
+    background-color: #1e293c;
+    padding: 0 30px 0 30px;
     border-radius: 20px;
     overflow: hidden;
-    height: 100%;
 
     header {
         //border-bottom: 4px dotted #31425f;
         height: 20%;
         width: 100%;
-        padding: 10px 0;
+        padding: 30px 0 0 0;
         @include flex(center, center, column);
 
         .title {
