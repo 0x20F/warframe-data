@@ -13,24 +13,22 @@ class Ring extends Component {
 
     render() {
 
-        const { radius, stroke, progress, className } = this.props;
-        const strokeDashoffset = this.circumference - progress / 100 * this.circumference;
+        const { radius, stroke, className } = this.props;
         const svgStyles = {
+            width: radius * 2,
+            height: radius * 2,
             zIndex: 5
         }
 
         return (
             <svg
                 className="progress-ring"
-                height={ radius * 2 }
-                width={ radius * 2 }
                 style={ svgStyles }>
 
                 <circle
                     className={ `progress-circle ${className}` }
                     strokeWidth={ stroke }
                     strokeDasharray={ this.circumference + ' ' + this.circumference }
-                    style={{ strokeDashoffset }}
                     r={ this.normalizedRadius }
                     cx={ radius }
                     cy={ radius }
